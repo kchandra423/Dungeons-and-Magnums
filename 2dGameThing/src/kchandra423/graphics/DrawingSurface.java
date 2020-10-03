@@ -1,0 +1,127 @@
+package kchandra423.graphics;
+
+import kchandra423.players.Knight;
+import kchandra423.players.Player;
+import processing.core.PApplet;
+
+/**
+ * Represents a drawing surface, which is a type of PApplet
+ * @author Kumar Chandra
+ *
+ */
+public class DrawingSurface extends PApplet {
+
+//	private Rectangle r;
+//	private Circle c;
+//	private Line l1, l2;
+	private Player p= new Knight();
+	/**
+	 * Creates a new Drawing surface
+	 */
+	public DrawingSurface() {
+//		r= new Rectangle(10,10,50,30);
+//		 c= new Circle(100,100,50);
+	}
+	
+	// The statements in the setup() function 
+	// execute once when the program begins
+	/**
+	 * doesn't do anything as of right now
+	 */
+	public void settings() {
+		size(1000,500);
+	}
+	public void setup() {
+		
+	}
+	
+	// The statements in draw() are executed until the 
+	// program is stopped. Each statement is executed in 
+	// sequence and after the last line is read, the first 
+	// line is executed again.
+	/**
+	 * draws everything in the drawing surface
+	 */
+	public void draw() { 
+		background(255);   // Clear the screen with a white background
+p.draw(this);
+	}
+	/**
+	 * moves creates lines
+	 */
+	public void mousePressed() {
+		if (mouseButton == LEFT) {
+			p.setLeftMouse(true);
+		} 
+//		else if (mouseButton == RIGHT)
+//			l2 = new Line(mouseX,mouseY,mouseX,mouseY);
+	}
+	public void mouseReleased() {
+		if (mouseButton == LEFT) {
+			p.setLeftMouse(false);
+		} 
+	}
+	
+	/**
+	 * moves lines
+	 */
+	public void mouseDragged() {
+//		if (mouseButton == LEFT) {
+//			l1.setPoint2(mouseX,mouseY);
+//		} 
+//		else if (mouseButton == RIGHT)
+//			l2.setPoint2(mouseX,mouseY);
+	}
+	/**
+	 * moves rectangle
+	 */
+	public void keyPressed() {
+
+		
+		 if(keyCode==UP) {
+		p.setUp(true);
+		}
+		else if(keyCode==LEFT) {
+			p.setLeft(true);
+		}
+		else if(keyCode==DOWN) {
+			p.setDown(true);
+		}
+		else if(keyCode==RIGHT) {
+			p.setRight(true);
+		}
+		
+		
+		
+	}
+	public void keyReleased() {
+
+		
+		 if(keyCode==UP) {
+		p.setUp(false);
+		}
+		else if(keyCode==LEFT) {
+			p.setLeft(false);
+		}
+		else if(keyCode==DOWN) {
+			p.setDown(false);
+		}
+		else if(keyCode==RIGHT) {
+			p.setRight(false);
+		}
+		
+		
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
