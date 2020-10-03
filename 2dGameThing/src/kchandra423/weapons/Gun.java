@@ -12,6 +12,7 @@ public class Gun implements Weapon {
 	private float projectileVelocity;
 	private float fireRate;
 	private int reloadTime;
+	private TimerTask reloadTask;
 	private Timer reloadTimer;
 	private int magazine;
 	private final int magazineSize;
@@ -19,9 +20,11 @@ public class Gun implements Weapon {
 	private int ammo;
 	private long lastTimeShot;
 	private float spread;
+	private long timeSinceReloaded;
 	private Rectangle body;
 	private ArrayList<Bullet> bullets= new ArrayList<Bullet>();
 	public Gun() {
+		timeSinceReloaded=0;
 		reloading=false;
 		fireRate= 0.1f;//wait time between bullets in seconds
 		reloadTime=3;//reload time in seconds
@@ -59,15 +62,21 @@ public class Gun implements Weapon {
 		// TODO Auto-generated method stub
 		if(magazine<=0) {
 			if(!reloading) {
-				reloading=true;
+				
 				reload();
-				System.out.println("reloading");
+				System.out.println("auto reloading");
 			}
 			
+		}if(reloading&&magazine>0) {
+			System.out.println("reloading cancelled");
+			
+					reloadTimer.cancel();
+					reloadTimer= new Timer();
+					reloading=false;
 		}
-		else if((System.nanoTime() - lastTimeShot) > fireRate*1000000000) { // hold to fire
+		if(((System.nanoTime() - lastTimeShot) > fireRate*1000000000)&&!reloading) { // hold to fire
             lastTimeShot = System.nanoTime();
-            reloading=false;
+            
             double initialx, initialy, displacementx, displacementy,angle;
     		initialx=body.getTop().getx2();
     		initialy=body.getTop().gety2(); 
@@ -94,21 +103,37 @@ public class Gun implements Weapon {
     		magazine--;
     		
         }
-		
+	
 		
 		
 	}
 	public void reload() {
-		reloadTimer.schedule(new TimerTask() {
-			public void run() {
-				magazine=magazineSize;
-				ammo-=magazineSize;
-			}
-		}, (long)(reloadTime*1000));
+		System.out.println(magazine);
+		if(magazine<magazineSize&&!reloading) {
+			reloading=true;
+			timeSinceReloaded=System.nanoTime();
+			reloadTask=new TimerTask() {
+				public void run() {
+					int dif= magazineSize-magazine;
+					magazine+=dif;
+//					magazine=magazineSize;
+					ammo-=dif;
+					reloading=false;
+					System.out.println("successfully reladed: "+magazine);
+				}
+			};
+		reloadTimer.schedule(reloadTask, (long)(reloadTime*1000));
+		}
 	}
 	public void addProjectile(Bullet p) {
 		bullets.add(p);
 		
+	}
+	public int getTimeToFinishReload() {
+		//1000000000
+		int percentage=(int)((System.nanoTime()-timeSinceReloaded)/(reloadTime*10000000));
+		
+		return percentage;
 	}
 	
 }

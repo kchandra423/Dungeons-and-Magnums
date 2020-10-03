@@ -2,6 +2,7 @@ package kchandra423.graphics;
 
 import kchandra423.players.Knight;
 import kchandra423.players.Player;
+import kchandra423.players.Rogue;
 import processing.core.PApplet;
 
 /**
@@ -14,7 +15,7 @@ public class DrawingSurface extends PApplet {
 //	private Rectangle r;
 //	private Circle c;
 //	private Line l1, l2;
-	private Player p= new Knight();
+	private Player p= new Rogue();
 	/**
 	 * Creates a new Drawing surface
 	 */
@@ -53,8 +54,9 @@ p.draw(this);
 		if (mouseButton == LEFT) {
 			p.setLeftMouse(true);
 		} 
-//		else if (mouseButton == RIGHT)
-//			l2 = new Line(mouseX,mouseY,mouseX,mouseY);
+		else if (mouseButton == RIGHT) {
+			p.useAbility();
+		}
 	}
 	public void mouseReleased() {
 		if (mouseButton == LEFT) {
@@ -78,17 +80,19 @@ p.draw(this);
 	public void keyPressed() {
 
 		
-		 if(keyCode==UP) {
+		 if(key=='w') {
 		p.setUp(true);
 		}
-		else if(keyCode==LEFT) {
+		else if(key=='a') {
 			p.setLeft(true);
 		}
-		else if(keyCode==DOWN) {
+		else if(key=='s') {
 			p.setDown(true);
 		}
-		else if(keyCode==RIGHT) {
+		else if(key=='d') {
 			p.setRight(true);
+		}else if (key=='r') {
+			p.reload();
 		}
 		
 		
@@ -97,16 +101,16 @@ p.draw(this);
 	public void keyReleased() {
 
 		
-		 if(keyCode==UP) {
+		 if(key=='w') {
 		p.setUp(false);
 		}
-		else if(keyCode==LEFT) {
+		else if(key=='a') {
 			p.setLeft(false);
 		}
-		else if(keyCode==DOWN) {
+		else if(key=='s') {
 			p.setDown(false);
 		}
-		else if(keyCode==RIGHT) {
+		else if(key=='d') {
 			p.setRight(false);
 		}
 		
