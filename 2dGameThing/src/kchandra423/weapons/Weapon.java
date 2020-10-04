@@ -7,4 +7,7 @@ public interface Weapon {
 	public void use(int mouseX, int mouseY);
 	public void reload();
 	public int getTimeToFinishReload();
+	public int getMagazine();
+	public int getMagazineSize();
+	public int getHitStreak();
 }

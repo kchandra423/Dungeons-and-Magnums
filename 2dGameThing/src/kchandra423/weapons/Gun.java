@@ -6,6 +6,7 @@ import java.util.TimerTask;
 import kchandra423.graphics.TwodGameThing;
 import kchandra423.projectiles.Bullet;
 import kchandra423.shapes.Rectangle;
+import kchandra423.utility.Calculator;
 import processing.core.PApplet;
 
 public class Gun implements Weapon {
@@ -22,6 +23,7 @@ public class Gun implements Weapon {
 	private float spread;
 	private long timeSinceReloaded;
 	private Rectangle body;
+	private int hitStreak;
 	private ArrayList<Bullet> bullets= new ArrayList<Bullet>();
 	public Gun() {
 		timeSinceReloaded=0;
@@ -42,6 +44,11 @@ public class Gun implements Weapon {
 		for (int i=0; i<bullets.size();i++) {
 			Bullet cur= bullets.get(i);
 			if(cur.isActive()==false) {
+				if(cur.hasHitEnemy()) {
+					hitStreak++;
+				}else {
+					hitStreak=0;
+				}
 				bullets.remove(cur);
 			}
 			else {
@@ -69,27 +76,29 @@ public class Gun implements Weapon {
 			
 		}if(reloading&&magazine>0) {
 			System.out.println("reloading cancelled");
-			
+					timeSinceReloaded=0;
 					reloadTimer.cancel();
 					reloadTimer= new Timer();
 					reloading=false;
 		}
-		if(((System.nanoTime() - lastTimeShot) > fireRate*1000000000)&&!reloading) { // hold to fire
-            lastTimeShot = System.nanoTime();
+		if(((System.currentTimeMillis() - lastTimeShot) > fireRate*1000)&&!reloading) { // hold to fire
+            lastTimeShot = System.currentTimeMillis();
             
-            double initialx, initialy, displacementx, displacementy,angle;
-    		initialx=body.getTop().getx2();
-    		initialy=body.getTop().gety2(); 
-    		//literally just physics
-    		displacementx=mouseX-initialx;
-    		displacementy=mouseY-initialy;
-    		angle=Math.atan(displacementy/displacementx);
-    	
-    		if(displacementx<0) {
-    			//remeber that the domain of arctan is the first and 4th quadrants, so if cos is negative,
-    			// you must add 180 degs
-    			angle+=Math.PI;
-    		}
+//            double initialx, initialy, displacementx, displacementy,angle;
+    		double initialx=body.getTop().getx2();
+    		double initialy=body.getTop().gety2(); 
+//    		//literally just physics
+//    		displacementx=mouseX-initialx;
+//    		displacementy=mouseY-initialy;
+//    		angle=Math.atan(displacementy/displacementx);
+//    	
+//    		if(displacementx<0) {
+//    			//remeber that the domain of arctan is the first and 4th quadrants, so if cos is negative,
+//    			// you must add 180 degs
+//    			angle+=Math.PI;
+//    		}
+            double angle= Calculator.calculateAngle(initialx,
+            		initialy, mouseX, mouseY);
     		if(Math.random()>=0.5) {
     			angle+=Math.random()*spread/2;
     		}else {
@@ -111,7 +120,7 @@ public class Gun implements Weapon {
 		System.out.println(magazine);
 		if(magazine<magazineSize&&!reloading) {
 			reloading=true;
-			timeSinceReloaded=System.nanoTime();
+			timeSinceReloaded=System.currentTimeMillis();
 			reloadTask=new TimerTask() {
 				public void run() {
 					int dif= magazineSize-magazine;
@@ -131,9 +140,22 @@ public class Gun implements Weapon {
 	}
 	public int getTimeToFinishReload() {
 		//1000000000
-		int percentage=(int)((System.nanoTime()-timeSinceReloaded)/(reloadTime*10000000));
+		int percentage=(int)((System.currentTimeMillis()-timeSinceReloaded)/(reloadTime*10));
 		
 		return percentage;
+	}
+	public int getMagazine() {
+		return magazine;
+		
+	}
+	public int getMagazineSize() {
+		return magazineSize;
+		
+	}
+	@Override
+	public int getHitStreak() {
+		// TODO Auto-generated method stub
+		return hitStreak;
 	}
 	
 }

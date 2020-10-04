@@ -1,29 +1,48 @@
 package kchandra423.players;
 
 
+import java.util.ArrayList;
 import java.util.Timer;
 
 import kchandra423.graphics.TwodGameThing;
+import kchandra423.projectiles.Bullet;
+import kchandra423.projectiles.Projectile;
+import kchandra423.projectiles.ThrowingKnife;
 import kchandra423.shapes.Circle;
 import kchandra423.weapons.Gun;
 import kchandra423.weapons.Weapon;
 import processing.core.PApplet;
 
 public abstract class Player {
-	private Circle body;
-	private Weapon w;
+	protected Circle body;
+	protected float damageMultiplier;
+	protected float defenseMultiplier;
+	protected Weapon w;
 	private int health;
 	private boolean isDead;
 	protected  float velocityX;
 	protected float velocityY;
 	protected float acceleration;
-	private boolean up,left,down,right,leftMouse;
+	protected boolean up;
+	protected boolean left;
+	protected boolean down;
+	protected boolean right;
+	private boolean leftMouse;
 	private int abilityCooldown;
-	private int superCooldown;
-	private boolean abilityOnCooldown;
-	private boolean superOnCooldown;
-	private Timer abilityTimer;
-	private Timer superTimer;
+	protected long timeSinceUsedAbility1;
+	protected boolean ability1OnCooldown=false;
+	protected float ability1Cooldown=3;
+	protected Timer ability1CooldownTimer=new Timer();
+	protected long timeSinceUsedAbility2;
+	protected boolean ability2OnCooldown=false;
+	protected float ability2Cooldown=1;
+	protected Timer ability2CooldownTimer=new Timer();
+	protected long timeSinceUsedAbility3;
+	protected boolean ability3OnCooldown=false;
+	protected float ability3Cooldown=6;
+	protected Timer ability3CooldownTimer=new Timer();
+	protected int superCooldown;
+	protected ArrayList<Projectile> abilityProjectiles= new ArrayList<Projectile>();
 	public Player() {
 		body=new Circle(10,10,10);
 		w=new Gun();
@@ -38,33 +57,119 @@ public abstract class Player {
 	    right=false;
 	    abilityCooldown=1*1000;
 	    superCooldown=5*1000;
+	    damageMultiplier=1.0f;
+	    defenseMultiplier=1.0f;
 	}
 	public void setup(PApplet p) {
 		
 	}
 	public void draw(PApplet p) {
 		move();
+		usePassive();
 		if(leftMouse) {
 			useWeapon(p.mouseX, p.mouseY);
 		}
 		body.draw(p);
 		w.draw(p);
-		int percentage= w.getTimeToFinishReload();
-//		System.out.println(""+time);
-		if(percentage<=100) {
-//			p.stroke(0)
-			p.pushStyle();
-//		p.stroke(0);
-//		p.textSize(12);	
-//		p.textAlign(p.CENTER);
+		for (int i=0; i<abilityProjectiles.size();i++) {
+			Projectile cur= abilityProjectiles.get(i);
+			if(cur.isActive()==false) {
+				abilityProjectiles.remove(cur);
+			}
+			else {
+			cur.draw(p);
+			}
+//			projectiles.get(i).move();
+		}
+		int reloadPercentage= w.getTimeToFinishReload();
+		int ability1Percentage=getAbility1Cooldown();
+		int ability2Percentage=getAbility2Cooldown();
+		int ability3Percentage=getAbility3Cooldown();
+		p.pushStyle();
+		if(reloadPercentage<=100) {
+
+		
 		p.noFill();
-//			p.text(""+percentage, (float)body.getX(), (float)body.getY()+15);
 		p.ellipseMode(p.CENTER);
 		p.stroke(255, 0, 0, 100);
-//		System.out.println(percentage);
-		p.arc((float)body.getX(), (float)body.getY(),20 , 20, 0,(float)(Math.PI*2*percentage/100));
-			p.popStyle();
+		p.strokeWeight(3);
+		p.arc((float)body.getX(), (float)body.getY(),25 , 25, 0,(float)(Math.PI*2*reloadPercentage/100));
+		p.strokeWeight(1);
 		}
+		
+		p.noFill();
+		p.stroke(0);
+		p.rect(20, TwodGameThing.BOUNDSY-100, 30, 10,7);
+		
+		if(ability1Percentage<=100) {
+
+			
+			p.fill(255,0,0,ability1Percentage*255/100f);
+			
+			p.stroke(255, 0, 0, 100);
+			p.rect(21, TwodGameThing.BOUNDSY-99, ability1Percentage*29/100f, 9,7);
+				
+			}
+		else {
+			
+			p.fill(0,255,0,255);
+			
+			p.stroke(0, 255, 0, 100);
+			p.rect(21, TwodGameThing.BOUNDSY-99, 29, 9,7);
+				
+		}
+		
+		p.noFill();
+		p.stroke(0);
+		p.rect(20, TwodGameThing.BOUNDSY-70, 30, 10,7);
+		
+		if(ability2Percentage<=100) {
+
+			
+			p.fill(255,0,0,ability2Percentage*255/100f);
+			
+			p.stroke(255, 0, 0, 100);
+			p.rect(21, TwodGameThing.BOUNDSY-69, ability2Percentage*29/100f, 9,7);
+				//haha funny number
+			}
+		else {
+			
+			p.fill(0,255,0,255);
+			
+			p.stroke(0, 255, 0, 100);
+			p.rect(21, TwodGameThing.BOUNDSY-69, 29, 9,7);
+				
+		}
+		
+		p.noFill();
+		p.stroke(0);
+		p.rect(20, TwodGameThing.BOUNDSY-40, 30, 10,7);
+		
+		if(ability3Percentage<=100) {
+
+			
+			p.fill(255,0,0,ability3Percentage*255/100f);
+			
+			p.stroke(255, 0, 0, 100);
+			p.rect(21, TwodGameThing.BOUNDSY-39, ability3Percentage*29/100f, 9,7);
+				//haha funny number
+			}
+		else {
+			
+			p.fill(0,255,0,255);
+			
+			p.stroke(0, 255, 0, 100);
+			p.rect(21, TwodGameThing.BOUNDSY-39, 29, 9,7);
+				
+		}
+		
+		
+		p.fill(0);
+		p.textSize(20);
+		p.textAlign(p.CENTER);
+		p.text(""+w.getMagazine()+" | "+w.getMagazineSize(), TwodGameThing.BOUNDSX/2, TwodGameThing.BOUNDSY-50);
+		p.popStyle();
+
 	}
 	public void reload() {
 		w.reload();
@@ -143,9 +248,24 @@ public abstract class Player {
 		w.use(mouseX, mouseY);
 	}
 	
-	public abstract void useAbility();
 	
-	public abstract void useSuper();
+	
+	public abstract void usePassive();
+	
+	public abstract int getAbility1Cooldown();
+	
+	public abstract int getAbility2Cooldown();
+	
+	public abstract int getAbility3Cooldown();
+	
+	public abstract void useAbility1(int mouseX, int MouseY);
+	
+	public abstract void useAbility2(int mouseX, int MouseY);
+	
+	public abstract void useAbility3(int mouseX, int MouseY);
+	
+	
+	public abstract void useSuper(int mouseX, int MouseY);
 	
 	public void incrementHealth() {
 		
@@ -164,5 +284,9 @@ public abstract class Player {
 	}
 	public void setLeftMouse(boolean param) {
 		leftMouse=param;
+	}
+	public void resetDamageMultiplier() {
+		damageMultiplier=1;
+		//will change to whatever your default damage multiplier is later
 	}
 }

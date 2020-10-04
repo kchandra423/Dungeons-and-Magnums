@@ -1,6 +1,5 @@
 package kchandra423.graphics;
 
-import kchandra423.players.Knight;
 import kchandra423.players.Player;
 import kchandra423.players.Rogue;
 import processing.core.PApplet;
@@ -55,8 +54,9 @@ p.draw(this);
 			p.setLeftMouse(true);
 		} 
 		else if (mouseButton == RIGHT) {
-			p.useAbility();
+			p.useAbility1(mouseX, mouseY);
 		}
+		
 	}
 	public void mouseReleased() {
 		if (mouseButton == LEFT) {
@@ -93,6 +93,15 @@ p.draw(this);
 			p.setRight(true);
 		}else if (key=='r') {
 			p.reload();
+		}
+		else if (key=='c') {
+			p.useAbility2(mouseX, mouseY);
+		}
+		else if (key=='v') {
+			p.useAbility3(mouseX, mouseY);
+		}
+		else if (key=='q') {
+			p.useSuper(mouseX, mouseY);
 		}
 		
 		
