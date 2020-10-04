@@ -6,7 +6,7 @@ public class Bullet extends Line implements Projectile{
 	private final double velocity;
 	private  double angle;
 	private double vx,vy;	
-	private boolean isActive=true;
+	protected boolean isActive=true;
 	private boolean directionChanged=false;
 	private int boundsX1, boundsY1, boundsX2, boundsY2;
 	private boolean hitEnemy;
