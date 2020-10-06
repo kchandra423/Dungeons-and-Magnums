@@ -13,7 +13,7 @@ public class Knight extends Player{
 	}
 
 	@Override
-	public void useAbility1(int mouseX, int MouseY) {
+	public void useAbility1() {
 		// TODO Auto-generated method stub
 		/*
 		 * Ideas:
@@ -24,18 +24,18 @@ public class Knight extends Player{
 	}
 
 	@Override
-	public void useAbility2(int mouseX, int MouseY) {
+	public void useAbility2() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void useAbility3(int mouseX, int MouseY) {
+	public void useAbility3() {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void useSuper(int mouseX, int mouseY) {
+	public void useSuper() {
 		// TODO Auto-generated method stub
 		
 	}

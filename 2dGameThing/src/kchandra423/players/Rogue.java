@@ -26,26 +26,27 @@ public class Rogue extends Player {
 	}
 
 	@Override
-	public void useAbility1(int mouseX, int mouseY) {
+	public void useAbility1() {
 		// TODO Auto-generated method stub
 		// roll, theres literally no other options (maybe with attack at the end)
 		if (!ability1OnCooldown) {
 			ability1OnCooldown = true;
 			timeSinceUsedAbility1 = System.currentTimeMillis();
 			System.out.println("ability activated");
-
-			if (up) {
-				velocityY = -10;
-			}
-			if (right) {
-				velocityX = 10;
-			}
-			if (left) {
-				velocityX = -10;
-			}
-			if (down) {
-				velocityY = 10;
-			}
+			velocityX=(float) (15*Math.cos(angle));
+			velocityY=(float) (15*Math.sin(angle));
+//			if (up) {
+//				velocityY = -10;
+//			}
+//			if (right) {
+//				velocityX = 10;
+//			}
+//			if (left) {
+//				velocityX = -10;
+//			}
+//			if (down) {
+//				velocityY = 10;
+//			}
 
 			ability1CooldownTimer.schedule(new TimerTask() {
 				public void run() {
@@ -58,7 +59,7 @@ public class Rogue extends Player {
 	}
 
 	@Override
-	public void useAbility2(int mouseX, int mouseY) {
+	public void useAbility2() {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		if (!ability2OnCooldown) {
@@ -67,10 +68,10 @@ public class Rogue extends Player {
 			double initialx = body.getX();
 			double initialy = body.getY();
 
-			double angle = Calculator.calculateAngle(initialx, initialy, mouseX, mouseY);
+			double tempangle = angle;
 
 			for (int i = 0; i < 5; i++) {
-				ThrowingKnife knife = new ThrowingKnife(initialx, initialy, 7, angle + ((i - 3) * Math.PI * 3 / 180), 0,
+				ThrowingKnife knife = new ThrowingKnife(initialx, initialy, 7, tempangle + ((i - 3) * Math.PI * 3 / 180), 0,
 						0, TwodGameThing.BOUNDSX, TwodGameThing.BOUNDSY);
 				abilityProjectiles.add(knife);
 			}
@@ -84,11 +85,12 @@ public class Rogue extends Player {
 	}
 
 	@Override
-	public void useAbility3(int mouseX, int mouseY) {
+	public void useAbility3() {
 		// TODO Auto-generated method stub
 		if (!ability3OnCooldown) {
 			if (firstShot) {
 				firstShot = false;
+				abilityOverRidingWeapon=3;
 				new Thread(new Runnable() {
 
 					@Override
@@ -148,28 +150,24 @@ public class Rogue extends Player {
 						firstShot = true;
 					}
 				}).start();
-			}
+			}else {
 
 			if (shotsFired < 5) {
 				double initialx = body.getX();
 				double initialy = body.getY();
 
-				double angle = Calculator.calculateAngle(initialx, initialy, mouseX, mouseY);
+				double tempangle = angle;
 
-				AbilityBullet p = new AbilityBullet(initialx, initialy, 10, angle, 0, 0, TwodGameThing.BOUNDSX,
+				AbilityBullet p = new AbilityBullet(initialx, initialy, 10, tempangle, 0, 0, TwodGameThing.BOUNDSX,
 						TwodGameThing.BOUNDSY, synchronize);
 				abilityProjectiles.add(p);
 				shots.add(p);
 				shotsFired++;
 			}
-//		        if(shotsFired==5) {
-//		        	for(int i=0;i<4;i++) {
-//		        		if(shots.get(i).hasHitEnemy()) {
-//		        			
-//		        		}
-//		        	}
-
-//		        }
+			if(shotsFired==5) {
+			abilityOverRidingWeapon=0;	
+			}
+			}
 
 		}
 	}
@@ -198,8 +196,10 @@ public class Rogue extends Player {
 	}
 
 	@Override
-	public void useSuper(int mouseX, int mouseY) {
+	public void useSuper() {
 
 	}
+
+	
 
 }

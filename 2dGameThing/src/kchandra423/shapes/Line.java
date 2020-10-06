@@ -257,6 +257,41 @@ public class Line {
 //			x2=midX+Math.cos(theta+d+Math.PI)*length/2;
 //			y2=midY+Math.sin(theta+d+Math.PI)*length/2;
 		}
+		public void rotateAboutPoint(double x, double y, double theta) {
+			double pX=x;
+			double midY= y;
+//		    x1 = ((x1 - midX) * Math.cos(theta) + (y1 - midY) * Math.sin(theta) ) + midX;
+//		    y1 = ( -(x1 - midX) * Math.sin(theta) + (y1 - midY) * Math.cos(theta) ) + midY;
+//		    x2 = ((x2 - midX) * Math.cos(theta) + (y2 - midY) * Math.sin(theta) ) + midX;
+//		    y2 = ( -(x2 - midX) * Math.sin(theta) + (y2 - midY) * Math.cos(theta) ) + midY;
+			
+			
+			 double s = Math.sin(theta);
+			 double c = Math.cos(theta);
+
+			  // translate point back to origin:
+			  x1 -= pX;
+			  y1 -= midY;
+
+			  // rotate point
+			  double xnew = x1 * c - y1 * s;
+			  double ynew = x1 * s + y1 * c;
+
+			  // translate point back:
+			  x1 = xnew + pX;
+			  y1 = ynew + midY;
+
+			  x2 -= pX;
+			  y2 -= midY;
+
+			  // rotate point
+			   xnew = x2 * c - y2 * s;
+			  ynew = x2 * s + y2 * c;
+
+			  // translate point back:
+			  x2 = xnew + pX;
+			  y2 = ynew + midY;
+		}
 		//this is the method that I added cuz I didn't wanna make a new lane every single time 
 		/**
 		 * sets both coordinates to specified values

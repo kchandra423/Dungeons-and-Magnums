@@ -108,6 +108,14 @@ public class Rectangle {
 		return answer;
 		
 	}
+	public void rotateAboutTLCorner(double theta) {
+			double x=getTopLeftX();
+			double y=getTopLeftY();
+		for(int i=0;i< 4;i++) {
+			lines[i].rotateAboutPoint(x, y, theta);
+		}
+		
+	}
 	/**
 	 * checks if any of this rectangles edges intersect with any of the other
 	 * rectangles edges. If this rectangle returns true, the other rectangle should also return true, 
@@ -162,5 +170,15 @@ public class Rectangle {
 	 */
 	public Line[] getLines() {
 		return lines;
+	}
+	public double getTopLeftX() {
+		return top.getx1();
+	}
+	public double getTopLeftY() {
+		return top.gety1();
+	}
+	public String toString() {
+		String answer=top.toString()+"\n"+left.toString()+"\n"+bottom.toString()+"\n"+right.toString();
+		return answer;
 	}
 }

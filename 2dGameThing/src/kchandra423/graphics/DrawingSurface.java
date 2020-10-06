@@ -1,7 +1,10 @@
 package kchandra423.graphics;
 
+import kchandra423.obstacles.Crate;
+import kchandra423.obstacles.Obstacle;
 import kchandra423.players.Player;
 import kchandra423.players.Rogue;
+import kchandra423.shapes.Rectangle;
 import processing.core.PApplet;
 
 /**
@@ -14,13 +17,17 @@ public class DrawingSurface extends PApplet {
 //	private Rectangle r;
 //	private Circle c;
 //	private Line l1, l2;
+	
 	private Player p= new Rogue();
+	private Room r=new Room(p);
+	Obstacle o=new Crate(100,100,30,40);
 	/**
 	 * Creates a new Drawing surface
 	 */
 	public DrawingSurface() {
 //		r= new Rectangle(10,10,50,30);
 //		 c= new Circle(100,100,50);
+		r.addObstacle(o);
 	}
 	
 	// The statements in the setup() function 
@@ -44,23 +51,31 @@ public class DrawingSurface extends PApplet {
 	 */
 	public void draw() { 
 		background(255);   // Clear the screen with a white background
-p.draw(this);
+//p.draw(this);
+		r.draw(this);
+//		Rectangle rect=new Rectangle(10,10,30,20);
+////		System.out.println(r);
+//		rect.draw(this);
+//		rect.rotateAboutTLCorner(Math.PI*1/3);
+//		rect.draw(this);
+////		System.out.println(rect);
 	}
 	/**
 	 * moves creates lines
 	 */
 	public void mousePressed() {
 		if (mouseButton == LEFT) {
-			p.setLeftMouse(true);
+			p.pressTrigger();;
 		} 
 		else if (mouseButton == RIGHT) {
-			p.useAbility1(mouseX, mouseY);
+			p.useAbility1();
 		}
 		
 	}
 	public void mouseReleased() {
 		if (mouseButton == LEFT) {
-			p.setLeftMouse(false);
+			p.releaseTrigger();
+		
 		} 
 	}
 	
@@ -95,13 +110,13 @@ p.draw(this);
 			p.reload();
 		}
 		else if (key=='c') {
-			p.useAbility2(mouseX, mouseY);
+			p.useAbility2();
 		}
 		else if (key=='v') {
-			p.useAbility3(mouseX, mouseY);
+			p.useAbility3();
 		}
 		else if (key=='q') {
-			p.useSuper(mouseX, mouseY);
+			p.useSuper();
 		}
 		
 		

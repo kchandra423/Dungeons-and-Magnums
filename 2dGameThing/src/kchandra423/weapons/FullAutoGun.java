@@ -9,10 +9,12 @@ import kchandra423.shapes.Rectangle;
 import kchandra423.utility.Calculator;
 import processing.core.PApplet;
 
-public class Gun implements Weapon {
+public class FullAutoGun implements Weapon {
 	private float projectileVelocity;
 	private float fireRate;
 	private int reloadTime;
+	private double angle;
+	private double changeInAngle;
 	private TimerTask reloadTask;
 	private Timer reloadTimer;
 	private int magazine;
@@ -24,8 +26,11 @@ public class Gun implements Weapon {
 	private long timeSinceReloaded;
 	private Rectangle body;
 	private int hitStreak;
+	private boolean triggerPressed;
 	private ArrayList<Bullet> bullets= new ArrayList<Bullet>();
-	public Gun() {
+	public FullAutoGun() {
+		changeInAngle=0;
+		angle=0;
 		timeSinceReloaded=0;
 		reloading=false;
 		fireRate= 0.1f;//wait time between bullets in seconds
@@ -40,7 +45,14 @@ public class Gun implements Weapon {
 	@Override
 	public void draw(PApplet p) {
 		// TODO Auto-generated method stub
+		if(changeInAngle!=0) {
+		body.rotateAboutTLCorner(changeInAngle);
+		changeInAngle=0;
+		}
 		body.draw(p);
+		if(triggerPressed) {
+			use();
+		}
 		for (int i=0; i<bullets.size();i++) {
 			Bullet cur= bullets.get(i);
 			if(cur.isActive()==false) {
@@ -63,9 +75,18 @@ public class Gun implements Weapon {
 		// TODO Auto-generated method stub
 		body.shift(xAmount, yAmount);
 	}
-
-	@Override
-	public void use(int mouseX, int mouseY) {
+	public void moveTo(float x, float y) {
+		
+	}
+	public void setAngle(double theta) {
+		
+		if(angle!=theta) {
+			changeInAngle=theta-angle;
+			angle=theta;
+			
+		}
+	}
+	private void use() {
 		// TODO Auto-generated method stub
 		if(magazine<=0) {
 			if(!reloading) {
@@ -97,16 +118,17 @@ public class Gun implements Weapon {
 //    			// you must add 180 degs
 //    			angle+=Math.PI;
 //    		}
-            double angle= Calculator.calculateAngle(initialx,
-            		initialy, mouseX, mouseY);
+//            double angle= Calculator.calculateAngle(initialx,
+//            		initialy, mouseX, mouseY);
+    		double tempAngle=angle;
     		if(Math.random()>=0.5) {
-    			angle+=Math.random()*spread/2;
+    			tempAngle+=Math.random()*spread/2;
     		}else {
-    			angle-=Math.random()*spread/2;
+    			tempAngle-=Math.random()*spread/2;
     		}
     		//makes the bullets
     		Bullet p=new Bullet((double)initialx,(double)initialy,
-    				projectileVelocity, (double)angle, 0, 
+    				projectileVelocity, (double)tempAngle, 0, 
     				0, TwodGameThing.BOUNDSX, TwodGameThing.BOUNDSY);
     		addProjectile(p);
     		magazine--;
@@ -157,5 +179,16 @@ public class Gun implements Weapon {
 		// TODO Auto-generated method stub
 		return hitStreak;
 	}
+	@Override
+	public void pressTrigger() {
+		// TODO Auto-generated method stub
+		triggerPressed=true;
+	}
+	@Override
+	public void releaseTrigger() {
+		// TODO Auto-generated method stub
+		triggerPressed=false;
+	}
+
 	
 }

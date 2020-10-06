@@ -18,8 +18,8 @@ public class Sword implements Weapon{
 		
 	}
 
-	@Override
-	public void use(int mouseX, int mouseY) {
+	
+	private void use() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -52,6 +52,30 @@ public class Sword implements Weapon{
 	public int getHitStreak() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public void pressTrigger() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void releaseTrigger() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setAngle(double theta) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveTo(float x, float y) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

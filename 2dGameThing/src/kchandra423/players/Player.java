@@ -9,7 +9,8 @@ import kchandra423.projectiles.Bullet;
 import kchandra423.projectiles.Projectile;
 import kchandra423.projectiles.ThrowingKnife;
 import kchandra423.shapes.Circle;
-import kchandra423.weapons.Gun;
+import kchandra423.utility.Calculator;
+import kchandra423.weapons.FullAutoGun;
 import kchandra423.weapons.Weapon;
 import processing.core.PApplet;
 
@@ -20,6 +21,7 @@ public abstract class Player {
 	protected Weapon w;
 	private int health;
 	private boolean isDead;
+	protected double angle;
 	protected  float velocityX;
 	protected float velocityY;
 	protected float acceleration;
@@ -27,8 +29,9 @@ public abstract class Player {
 	protected boolean left;
 	protected boolean down;
 	protected boolean right;
-	private boolean leftMouse;
-	private int abilityCooldown;
+//	private boolean leftMouse;
+	protected int abilityOverRidingWeapon=0;
+
 	protected long timeSinceUsedAbility1;
 	protected boolean ability1OnCooldown=false;
 	protected float ability1Cooldown=3;
@@ -45,7 +48,7 @@ public abstract class Player {
 	protected ArrayList<Projectile> abilityProjectiles= new ArrayList<Projectile>();
 	public Player() {
 		body=new Circle(10,10,10);
-		w=new Gun();
+		w=new FullAutoGun();
 		health=100;
 		isDead=false;
 		velocityX=0;
@@ -55,7 +58,7 @@ public abstract class Player {
 	    down=false;
 	    left=false;
 	    right=false;
-	    abilityCooldown=1*1000;
+//	    abilityCooldown=1*1000;
 	    superCooldown=5*1000;
 	    damageMultiplier=1.0f;
 	    defenseMultiplier=1.0f;
@@ -64,11 +67,13 @@ public abstract class Player {
 		
 	}
 	public void draw(PApplet p) {
+		angle=Calculator.calculateAngle(body.getX(), body.getY(), p.mouseX, p.mouseY);
+		w.setAngle(angle);
 		move();
 		usePassive();
-		if(leftMouse) {
-			useWeapon(p.mouseX, p.mouseY);
-		}
+//		if(leftMouse) {
+//			useWeapon();
+//		}
 		body.draw(p);
 		w.draw(p);
 		for (int i=0; i<abilityProjectiles.size();i++) {
@@ -178,7 +183,27 @@ public abstract class Player {
 	public void equipWeapon() {
 		
 	}
-	
+	public void pressTrigger() {
+		switch(abilityOverRidingWeapon) {
+		case 0:
+			w.pressTrigger();
+			break;
+		case 1:
+			useAbility1();
+			break;
+		case 2:
+			useAbility2();
+			break;
+		case 3:
+			useAbility3();
+			break;
+			
+		}
+		
+	}
+	public void releaseTrigger() {
+		w.releaseTrigger();
+	}
 	public void move() {
 		float xamount=0;
 		float yamount=0;
@@ -244,9 +269,9 @@ public abstract class Player {
 		 }
 	}
 	
-	public void useWeapon(int mouseX, int mouseY) {
-		w.use(mouseX, mouseY);
-	}
+//	public void useWeapon() {
+//		w.use();
+//	}
 	
 	
 	
@@ -258,14 +283,14 @@ public abstract class Player {
 	
 	public abstract int getAbility3Cooldown();
 	
-	public abstract void useAbility1(int mouseX, int MouseY);
+	public abstract void useAbility1();
 	
-	public abstract void useAbility2(int mouseX, int MouseY);
+	public abstract void useAbility2();
 	
-	public abstract void useAbility3(int mouseX, int MouseY);
+	public abstract void useAbility3();
 	
 	
-	public abstract void useSuper(int mouseX, int MouseY);
+	public abstract void useSuper();
 	
 	public void incrementHealth() {
 		
@@ -282,9 +307,9 @@ public abstract class Player {
 	public void setLeft(boolean param) {
 		left=param;
 	}
-	public void setLeftMouse(boolean param) {
-		leftMouse=param;
-	}
+//	public void setLeftMouse(boolean param) {
+//		leftMouse=param;
+//	}
 	public void resetDamageMultiplier() {
 		damageMultiplier=1;
 		//will change to whatever your default damage multiplier is later
