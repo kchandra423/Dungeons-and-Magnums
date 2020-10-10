@@ -2,7 +2,7 @@ package kchandra423.players;
 
 public class Knight extends Player{
 
-
+	
 
 
 
@@ -21,6 +21,7 @@ public class Knight extends Player{
 		 * invincibility / increased defense
 		 * unlimited ammo/ atto reload 
 		 */
+		
 	}
 
 	@Override
@@ -40,21 +41,6 @@ public class Knight extends Player{
 		
 	}
 
-	@Override
-	public int getAbility1Cooldown() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getAbility2Cooldown() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getAbility3Cooldown() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
+	
 }

@@ -43,6 +43,16 @@ public class Circle {
 	 
 	 return answer;
  }
+ public boolean overLaps(Rectangle r) {
+	 boolean answer=false;
+	 if(intersectsEdge(r)) {
+		 answer=true;
+	 }
+	 else if(r.isPointInside(x,y)) {
+		 answer=true;
+	 }
+	 return answer;
+ }
  /**
   * Checks if this circle intersects a line 
   * @param other the line youre checking intersection with
@@ -50,64 +60,35 @@ public class Circle {
   * returns false otherwise, even if the line is inside the circle
   */
  public boolean intersectsEdge(Line other) {
-	 boolean point1Inside=false;
-	 boolean point2Inside=false;
-	 if(isPointInside(other.getx1(),other.gety1())){
-		point1Inside=true;
+	
+	 //at this point, I yearn for death
+	 double ax=other.getx1();
+	 double ay=other.gety1();
+	 double bx=other.getx2();
+	 double by=other.gety2();
+	 double cx= x;
+	 double cy= y;
+	 double r = getRadius();
+	 ax -= cx;
+	 ay -= cy;
+	 bx -= cx;
+	 by -= cy;
+	 double a = Math.pow((bx - ax), 2) + Math.pow((by - ay), 2);
+	double  b = 2*(ax*(bx - ax) + ay*(by - ay));
+	double  c = Math.pow(ax, 2) + Math.pow(ay, 2) - Math.pow(r, 2);
+	double  disc = Math.pow(b, 2) - 4*a*c;
+	 if(disc <= 0) {
+		 return false;
 	 }
-	 if(isPointInside(other.getx2(),other.gety2())){
-		 point2Inside=true;
-	 }
-	 // if one point is in the circle, by default they must intersect
-	 if((point2Inside&&!point1Inside)||(point1Inside&&!point2Inside)) {
+	double  sqrtdisc = Math.sqrt(disc);
+	double t1 = (-b + sqrtdisc)/(2*a);
+	double  t2 = (-b - sqrtdisc)/(2*a);
+	 if((0 < t1 && t1 < 1) || (0 < t2 && t2 < 1)) {
 		 return true;
 	 }
-	 else if(point2Inside&&point1Inside) {
-		 return false;
-	 }
-	
 	 
+	 return false;
 	 
-	 boolean answer=false;
-	 // find slope and y intercept of normal (perpindicular)
-	 // line of the other line that goes through the center
-	 double slopeNorm = -(1/other.getSlope());
-	 double interceptNorm = y-slopeNorm*x;
-	 
-	 //get where the two lines intersects
-	 double xValueOfIntersection=(interceptNorm-other.getYInterecept())/(other.getSlope()-slopeNorm);
-	 double yValueOfIntersection= slopeNorm*xValueOfIntersection+interceptNorm;
-	 
-//	 if(yValueOfIntersection>(other.getSlope()*xValueOfIntersection+other.getYInterecept())+0.0001){
-//		 System.out.println("things were calculated incorrectly");
-//	 }
-//	 if(yValueOfIntersection<(other.getSlope()*xValueOfIntersection+other.getYInterecept())-0.00001){
-//		 System.out.println("things were calculated incorrectly");
-//	 }
-//	 double ahhhh=(other.getSlope()*xValueOfIntersection+other.getYInterecept());
-//	 if(yValueOfIntersection!=ahhhh){
-//		 System.out.println(ahhhh+" : norm line");
-//		 System.out.println(yValueOfIntersection+" : line");
-//	 }
-//	 if(!other.intersects(xValueOfIntersection, yValueOfIntersection)) {
-//		 System.out.println("something is mongey");ue
-//	 }
-	
-	 //intersection point is part of the other line
-	 if(!other.intersects(xValueOfIntersection, yValueOfIntersection)) {
-		
-		 return false;
-	 }
-	 
-	 // if the place they intersect is less than the radius
-	 double dist=PApplet.dist((float)x, (float)y, (float)xValueOfIntersection,(float)yValueOfIntersection);
-	 if(dist+0.001<=getRadius()) {
-
-		 answer=true;
-	 }
-	 
-	 
-	 return answer;
  }
  // **********THIS METHOD DOESN'T WORK FOR VERTICAL AND HORIZANTAL LINES******************8
  // the calculations become bad because the slope of the line or of the tangent line 
@@ -183,6 +164,12 @@ public class Circle {
  public void shift(double xAmount, double yAmount) {
 	 
 	 x+=xAmount;
+	 y+=yAmount;
+ }
+ public void shiftX(double xAmount) {
+	 x+=xAmount;
+ }
+ public void shiftY(double yAmount) {
 	 y+=yAmount;
  }
  public double getX() {

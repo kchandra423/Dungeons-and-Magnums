@@ -1,5 +1,8 @@
 package kchandra423.weapons;
 
+import java.util.ArrayList;
+
+import kchandra423.projectiles.Projectile;
 import processing.core.PApplet;
 
 public class Sword implements Weapon{
@@ -12,7 +15,7 @@ public class Sword implements Weapon{
 		
 	}
 
-	@Override
+
 	public void shift(float xAmount, float yAmount) {
 		// TODO Auto-generated method stub
 		
@@ -76,6 +79,25 @@ public class Sword implements Weapon{
 	public void moveTo(float x, float y) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void shiftX(float xAmount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void shiftY(float yAmount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public ArrayList<Projectile> getProjectiles() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

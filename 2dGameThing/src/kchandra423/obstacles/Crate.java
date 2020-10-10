@@ -25,5 +25,12 @@ public class Crate  extends Rectangle implements Obstacle{
 //	public void draw(PApplet p) {
 //		this.draw(p);
 //	}
+
+
+	@Override
+	public Rectangle getRect() {
+		// TODO Auto-generated method stub
+		return this;
+	}
 	
 }

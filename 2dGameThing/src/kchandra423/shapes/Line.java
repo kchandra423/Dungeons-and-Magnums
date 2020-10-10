@@ -317,6 +317,14 @@ public class Line {
 			y1+=yamount;
 			y2+=yamount;
 		}
+		public void shiftX(double xamount) {
+			x1+=xamount;
+			x2+=xamount;
+		}
+		public void shiftY(double yamount) {
+			y1+=yamount;
+			y2+=yamount;
+		}
 		/**
 		 * returns xcoord of first point
 		 * @return first xcoord

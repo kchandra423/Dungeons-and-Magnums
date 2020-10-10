@@ -97,4 +97,16 @@ public class Bullet extends Line implements Projectile{
 		public boolean hasHitEnemy() {
 			return hitEnemy;
 		}
+
+		@Override
+		public double getX() {
+			// TODO Auto-generated method stub
+			return getx1();
+		}
+
+		@Override
+		public double getY() {
+			// TODO Auto-generated method stub
+			return gety1();
+		}
 }

@@ -19,7 +19,7 @@ public class DrawingSurface extends PApplet {
 //	private Line l1, l2;
 	
 	private Player p= new Rogue();
-	private Room r=new Room(p);
+	private Room r;
 	Obstacle o=new Crate(100,100,30,40);
 	/**
 	 * Creates a new Drawing surface
@@ -27,6 +27,8 @@ public class DrawingSurface extends PApplet {
 	public DrawingSurface() {
 //		r= new Rectangle(10,10,50,30);
 //		 c= new Circle(100,100,50);
+		r=new Room(p);
+		
 		r.addObstacle(o);
 	}
 	

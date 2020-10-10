@@ -1,15 +1,16 @@
 package kchandra423.weapons;
+
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import kchandra423.graphics.TwodGameThing;
 import kchandra423.projectiles.Bullet;
+import kchandra423.projectiles.Projectile;
 import kchandra423.shapes.Rectangle;
-import kchandra423.utility.Calculator;
 import processing.core.PApplet;
 
-public class FullAutoGun implements Weapon {
+public abstract class Gun implements Weapon {
 	private float projectileVelocity;
 	private float fireRate;
 	private int reloadTime;
@@ -28,7 +29,7 @@ public class FullAutoGun implements Weapon {
 	private int hitStreak;
 	private boolean triggerPressed;
 	private ArrayList<Bullet> bullets= new ArrayList<Bullet>();
-	public FullAutoGun() {
+	public Gun() {
 		changeInAngle=0;
 		angle=0;
 		timeSinceReloaded=0;
@@ -53,27 +54,38 @@ public class FullAutoGun implements Weapon {
 		if(triggerPressed) {
 			use();
 		}
-		for (int i=0; i<bullets.size();i++) {
-			Bullet cur= bullets.get(i);
-			if(cur.isActive()==false) {
-				if(cur.hasHitEnemy()) {
-					hitStreak++;
-				}else {
-					hitStreak=0;
-				}
-				bullets.remove(cur);
-			}
-			else {
-			cur.draw(p);
-			}
-//			projectiles.get(i).move();
+		if(magazine<=0) {
+			reload();
 		}
+//		for (int i=0; i<bullets.size();i++) {
+//			Bullet cur= bullets.get(i);
+//			if(cur.isActive()==false) {
+//				if(cur.hasHitEnemy()) {
+//					hitStreak++;
+//				}else {
+//					hitStreak=0;
+//				}
+//				bullets.remove(cur);
+//			}
+//			else {
+//			cur.draw(p);
+//			}
+//			projectiles.get(i).move();
+		
 	}
 
-	@Override
+	
 	public void shift(float xAmount, float yAmount) {
 		// TODO Auto-generated method stub
 		body.shift(xAmount, yAmount);
+	}
+	public void shiftX(float xAmount) {
+		// TODO Auto-generated method stub
+		body.shiftX(xAmount);
+	}
+	public void shiftY(float yAmount) {
+		// TODO Auto-generated method stub
+		body.shiftY(yAmount);
 	}
 	public void moveTo(float x, float y) {
 		
@@ -86,7 +98,7 @@ public class FullAutoGun implements Weapon {
 			
 		}
 	}
-	private void use() {
+	protected void use() {
 		// TODO Auto-generated method stub
 		if(magazine<=0) {
 			if(!reloading) {
@@ -189,6 +201,11 @@ public class FullAutoGun implements Weapon {
 		// TODO Auto-generated method stub
 		triggerPressed=false;
 	}
-
-	
+	@Override
+	public ArrayList<Projectile> getProjectiles() {
+		// TODO Auto-generated method stub
+		ArrayList<Projectile> answer= new ArrayList<Projectile>();
+		answer.addAll(bullets);
+		return answer;
+	}
 }

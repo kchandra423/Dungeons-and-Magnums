@@ -92,6 +92,16 @@ public class Rectangle {
 			lines[i].shift(xAmount, yAmount);
 		}
 	}
+	public void shiftX(double xAmount) {
+		for(int i=0; i<lines.length;i++) {
+			lines[i].shiftX(xAmount);
+		}
+	}
+	public void shiftY(double yAmount) {
+		for(int i=0; i<lines.length;i++) {
+			lines[i].shiftY(yAmount);
+		}
+	}
 	/**
 	 * checks if any of the edges intersect with the given live
 	 * @param other the given line
