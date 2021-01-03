@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="libs/files.jar"/>
+	<classpathentry kind="lib" path="libs/gif-decoder.jar"/>
+	<classpathentry kind="lib" path="libs/processing_core.jar"/>
+	<classpathentry kind="lib" path="libs/simpleShapes.jar"/>
+	<classpathentry kind="lib" path="libs/Sprites.jar"/>
+	<classpathentry kind="lib" path="libs/Textures.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
