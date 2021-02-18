@@ -15,7 +15,6 @@ public class Obstacle extends Entity{
 	}
 	public collisionTypes getObstaclesType() {
 		return null;
-		
 	}
 	
 }

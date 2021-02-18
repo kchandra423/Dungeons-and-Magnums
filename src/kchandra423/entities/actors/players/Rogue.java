@@ -1,6 +1,5 @@
 package kchandra423.entities.actors.players;
 
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -8,81 +7,79 @@ import Sprite.Sprite;
 import Sprite.SpriteCircle;
 import Textures.Texture;
 import Textures.Texture.TextureBuilder;
-import kchandra423.graphics.TwodGameThing;
 import kchandra423.shapes.Circle;
-import kchandra423.utility.Constants.multipliers;
-import kchandra423.utility.Constants.subclasses;
 
 public class Rogue extends Player {
-	// there has seriously got to be a better way to do this than like this, but
-	// whatever
-	public Rogue(float x, float y) {
-		super(loadSprites(x, y), 20, 2.5f, loadPlayerMetadata(), loadAbilities());
-	}
+    // there has seriously got to be a better way to do this than like this, but
+    // whatever
+    public Rogue(float x, float y) {
+        super(loadSprites(x, y), 2.5f, loadPlayerMetadata(), loadAbilities());
+    }
 
-//	private ArrayList<AbilityBullet> shots = new ArrayList<AbilityBullet>();
-	private boolean firstShot;
-	private int shotsFired;
-	private Object synchronize;
-	private float totalBuffs;
+    //	private ArrayList<AbilityBullet> shots = new ArrayList<AbilityBullet>();
+    private boolean firstShot;
+    private int shotsFired;
+    private Object synchronize;
+    private float totalBuffs;
 
-	@Override
-	public void usePassive() {
-//		if(getCurrentWeapon().getHitStreak()>0) {
-//			incrementAllAttackStats(0.2f);
-//			totalBuffs+=0.2;
-//		}else {
-//			incrementAllAttackStats(-totalBuffs);
-//			totalBuffs=0;
-//		}
+    @Override
+    public void usePassive() {
+        if (getCurrentWeapon().getHitStreak() > 0) {
+            getPlayerInfo().incrementAllAttackStats(0.2f);
+            totalBuffs += 0.2;
+        } else {
+            getPlayerInfo().incrementAllAttackStats(-totalBuffs);
+            totalBuffs = 0;
+        }
 
-	}
+    }
 
-	@Override
-	public void useAbility1() {
-		// TODO Auto-generated method stub
-		// roll, theres literally no other options (maybe with attack at the end)
-//		AbilityMetadata ability= getAbility1Info();
-//		if (!ability.isAbilityOnCooldown()) {
-//			ability.setAbilityOnCooldown(true);
-//			ability.setTimeSinceUsedAbility(System.currentTimeMillis());
-//			double angOfRoll=getAngle();
-//			setVelocityX((float) (15*Math.cos(angOfRoll)));
-//			setVelocityY((float) (15*Math.sin(angOfRoll)));
-//			setAcceleration(0);
-//			Timer resetSpeed= new Timer();
-//			resetSpeed.schedule(new TimerTask() {
-//				public void run() {
-//					if(getVelocityX()>5) {
-//						setVelocityX(5);
-//					}
-//					else if(getVelocityX()<-5) {
-//						setVelocityX(-5);
-//					}
-//					if(getVelocityY()>5) {
-//						setVelocityY(5);
-//					}
-//					else if(getVelocityY()<-5) {
-//						setVelocityY(-5);
-//					}
-//					setAcceleration(0.75f);
-//				}
-//			}, (long) (0.15*1000));
-//
+    @Override
+    public void useAbility1() {
+        // TODO Auto-generated method stub
+        // roll, theres literally no other options (maybe with attack at the end)
+        AbilityMetadata ability = getAbility1();
+        if (!ability.isAbilityOnCooldown()) {
+            ability.setTimeSinceUsedAbility(System.currentTimeMillis());
+            float angOfRoll = getPlayerInfo().getAngle();
+            float newV = getPlayerInfo().getBaseV() * 4;
+            setVx((float) (newV * Math.cos(angOfRoll)));
+            setVy((float) (newV * Math.sin(angOfRoll)));
+            setAccel(0);
+            experiencingFriction = false;
+            Timer resetSpeed = new Timer();
+            resetSpeed.schedule(new TimerTask() {
+                public void run() {
+                    float baseV = getPlayerInfo().getBaseV();
+                    if (getVx() > baseV) {
+                        setVx(baseV);
+                    } else if (getVx() < -baseV) {
+                        setVx(-baseV);
+                    }
+                    if (getVy() > baseV) {
+                        setVy(baseV);
+                    } else if (getVy() < -baseV) {
+                        setVy(-baseV);
+                    }
+                    experiencingFriction = true;
+                    setAccel(2.5f);
+                }
+            }, (long) (0.15d * 1000));
+
 //			ability.getAbilityCooldownTimer().schedule(new TimerTask() {
 //				@Override
 //				public void run() {
 //					ability.setAbilityOnCooldown(false);
 //				}
 //			}, (long) (ability.getAbilityCooldown() * 1000));
-//		}
+        }
 
-	}
+    }
 
-	@Override
-	public void useAbility2() {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
+    @Override
+    public void useAbility2() {
+        // TODO Auto-generated method stub
+        // TODO Auto-generated method stub
 //		AbilityMetadata ability= getAbility2Info();
 //		if (!ability.isAbilityOnCooldown()) {
 //			ability.setAbilityOnCooldown(true);
@@ -104,11 +101,11 @@ public class Rogue extends Player {
 //				}
 //			}, (long) (ability.getAbilityCooldown() * 1000));
 //		}
-	}
+    }
 
-	@Override
-	public void useAbility3() {
-		// TODO Auto-generated method stub
+    @Override
+    public void useAbility3() {
+        // TODO Auto-generated method stub
 //		AbilityMetadata ability= getAbility3Info();
 //		if (!ability.isAbilityOnCooldown()) {
 //			if (firstShot) {
@@ -193,14 +190,14 @@ public class Rogue extends Player {
 //			}
 //
 //		}
-	}
+    }
 
-	@Override
-	public void useSuper() {
+    @Override
+    public void useSuper() {
 
-	}
+    }
 
-//	statMultipliers.put(multipliers.RANGED, 1.5f);
+    //	statMultipliers.put(multipliers.RANGED, 1.5f);
 //	statMultipliers.put(multipliers.MAGIC, 1f);
 //	statMultipliers.put(multipliers.MELEE, 1f);
 //	statMultipliers.put(multipliers.SHORT, 1f);
@@ -216,32 +213,32 @@ public class Rogue extends Player {
 //	ability2=new AbilityMetadata(5);
 //	ability3=new AbilityMetadata(15);
 //	setSuperCooldown(120);
-	private static Sprite[] loadSprites(float x, float y) {
-		Sprite idle;
-		Texture tIdle = TextureBuilder.getTexture("res/Images/Players/MageIdle.gif");
+    private static Sprite[] loadSprites(float x, float y) {
+        Sprite idle;
+        Texture tIdle = TextureBuilder.getTexture("res/Images/Players/MageIdle.gif");
 //		tIdle.resize(80, 80);
-		Circle cIdle = new Circle(x, y, tIdle.getWidth()-20);
-		idle = new SpriteCircle(tIdle, cIdle);
-		Sprite active;
-		Texture tActive = TextureBuilder.getTexture("res/Images/Players/MageActive.gif");
+        Circle cIdle = new Circle(x, y, tIdle.getWidth() - 20);
+        idle = new SpriteCircle(tIdle, cIdle);
+        Sprite active;
+        Texture tActive = TextureBuilder.getTexture("res/Images/Players/MageActive.gif");
 //		tActive.resize(80, 80);
-		// Circle cActive= new Circle(x,y,tActive.getWidth());
-		active = new SpriteCircle(tActive, cIdle);
-		return new Sprite[] { idle, active };
-	}
+        // Circle cActive= new Circle(x,y,tActive.getWidth());
+        active = new SpriteCircle(tActive, cIdle);
+        return new Sprite[]{idle, active};
+    }
 
-	private static PlayerMetadata loadPlayerMetadata() {
-		float[] multipliers = new float[] { 1.5f, 1, 1, 1, 1.25f, 1, 1 };
-		return new PlayerMetadata(multipliers, 100, 120);
-	}
+    private static PlayerMetadata loadPlayerMetadata() {
+        float[] multipliers = new float[]{1.5f, 1, 1, 1, 1.25f, 1, 1};
+        return new PlayerMetadata(multipliers, 100, 120, 20);
+    }
 
-	private static AbilityMetadata[] loadAbilities() {
-		AbilityMetadata[] abilities = new AbilityMetadata[4];
-		abilities[0] = new AbilityMetadata(2);
-		abilities[1] = new AbilityMetadata(5);
-		abilities[2] = new AbilityMetadata(15);
-		abilities[3] = new AbilityMetadata(120);
-		return abilities;
-	}
+    private static AbilityMetadata[] loadAbilities() {
+        AbilityMetadata[] abilities = new AbilityMetadata[4];
+        abilities[0] = new AbilityMetadata(2);
+        abilities[1] = new AbilityMetadata(5);
+        abilities[2] = new AbilityMetadata(15);
+        abilities[3] = new AbilityMetadata(120);
+        return abilities;
+    }
 
 }

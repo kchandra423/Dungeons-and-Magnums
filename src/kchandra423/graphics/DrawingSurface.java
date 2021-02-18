@@ -19,8 +19,6 @@ public class DrawingSurface extends PApplet {
 
 
 	private static boolean []keys;
-	private static int mouseX;
-	private static int mouseY;
 	private Player p;
 	private Obstacle[] obstacles;
 	/**
@@ -60,7 +58,7 @@ public class DrawingSurface extends PApplet {
 	 */
 	public void draw() { 
 		background(170);   // Clear the screen with a white background
-		System.out.println(frameRate);
+//		System.out.println(frameRate);
 		for(Obstacle o:obstacles)
 		o.draw(this);
 		
@@ -94,13 +92,6 @@ public class DrawingSurface extends PApplet {
 		
 	}
 
-	public static int getMouseX() {
-		return mouseX;
-	}
-
-	public static int getMouseY() {
-		return mouseY;
-	}
 	public Obstacle[] getObstacles() {
 		return obstacles;
 	}

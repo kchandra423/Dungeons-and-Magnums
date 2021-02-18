@@ -2,14 +2,18 @@ package kchandra423.entities.actors.players;
 
 
 public class PlayerMetadata {
-	public PlayerMetadata(float[] multiplierStats, int maxHealth, int maxShield) {
+	public PlayerMetadata(float[] multiplierStats, int maxHealth, int maxShield,float baseV) {
 		statMultipliers=multiplierStats;
 		this.maxHealth=maxHealth;
 		setHealth(maxHealth);
 		this.maxShield=maxShield;
 		setShield(maxShield);
+		angle=0;
+		this.baseV=baseV;
 	}
 	public static final int RANGED=0, MAGIC=1, MELEE=2,SHORT=3,LONG=4,PHYSDEF=5,MAGDEF=6;
+	private final float baseV;
+	private float angle;
 	private float[] statMultipliers;
 	private int health;
 	private int maxHealth;
@@ -57,5 +61,16 @@ public class PlayerMetadata {
 	public int getMaxShield() {
 		return maxShield;
 	}
-	
+
+	public float getAngle() {
+		return angle;
+	}
+
+	public void setAngle(float angle) {
+		this.angle = angle;
+	}
+
+	public float getBaseV() {
+		return baseV;
+	}
 }

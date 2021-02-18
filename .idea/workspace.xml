@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="" />
+    <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Through intelliJ :)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/entities/actors/Actor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/PlayerMetadata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/PlayerMetadata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/Rogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/obstacles/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/entities/obstacles/Obstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,11 +86,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613681566473</updated>
-      <workItem from="1613681568577" duration="2490000" />
+      <workItem from="1613681568577" duration="5721000" />
     </task>
+    <task id="LOCAL-00001" summary="Through intelliJ :)">
+      <created>1613684087506</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613684087506</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Through intelliJ :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Through intelliJ :)" />
   </component>
 </project>
