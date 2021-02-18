@@ -1,4 +1,3 @@
-		velocity=0;
 //package kchandra423.weapons.projectiles;
 //import kchandra423.shapes.Line;
 //import processing.core.PApplet;
