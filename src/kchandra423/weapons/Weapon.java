@@ -2,7 +2,7 @@ package kchandra423.weapons;
 import java.util.ArrayList;
 
 import Sprite.Sprite;
-import kchandra423.weapons.projectiles.Projectile;
+import kchandra423.weapons.projectiles.Bullet;
 import processing.core.PApplet;
 
 public interface Weapon {
@@ -19,6 +19,6 @@ public interface Weapon {
 	public void releaseTrigger();
 	public void setAngle(double theta);
 //	public void moveTo(float x, float y);
-	public ArrayList<Projectile> getProjectiles();
+	public ArrayList<Bullet> getProjectiles();
 	public void act();
 }

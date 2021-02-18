@@ -5,14 +5,14 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import kchandra423.files.FileManager;
-import kchandra423.weapons.projectiles.Projectile;
+import kchandra423.weapons.projectiles.Bullet;
 
 public class RangedWeaponMetadata {
 	private final String name;
 	private final int id;
 	private final float projectileVelocity;
 	private final float fireRate;
-	private final int reloadTime;
+	private final int reloadTime;///1000ths
 	private double angle;
 	private int magazine;
 	private final int magazineSize;
@@ -29,7 +29,7 @@ public class RangedWeaponMetadata {
 	private int killStreak;
 	private boolean triggerPressed;
 	private final boolean center;
-	private ArrayList<Projectile> projectiles= new ArrayList<Projectile>();
+	private final ArrayList<Bullet> projectiles= new ArrayList<Bullet>();
 	public RangedWeaponMetadata(int weaponId) {
 		this.id=weaponId;
 		reloading=false;
@@ -37,24 +37,6 @@ public class RangedWeaponMetadata {
 		setLastTimeShot(System.currentTimeMillis());
 		setTriggerPressed(false);
 		reloadTimer=new Timer();
-//		reloadTask= new TimerTask() {
-//
-//			@Override
-//			public void run() {
-//				// TODO Auto-generated method stub
-//				int dif= magazineSize-magazine;
-//				magazine+=dif;
-//				if(dif>ammo) {
-//					dif=ammo;
-//				}
-////				magazine=magazineSize;
-//				ammo-=dif;
-//				reloading=false;
-//				System.out.println("successfully reladed: "+magazine);
-//			}
-//			
-//		};
-//		firing=false;
 		FileManager file = new FileManager("res/GameConstants/WeaponStats",true);
 		String s=null;
 		try {
@@ -65,6 +47,7 @@ public class RangedWeaponMetadata {
 		}finally {
 			file.close();
 		}
+
 		String[] split=s.split("\n")[weaponId-1].split(",");
 		name=split[0];
 		this.projectileVelocity=Float.parseFloat(split[1]);
@@ -141,7 +124,7 @@ public class RangedWeaponMetadata {
 	public void setTriggerPressed(boolean triggerPressed) {
 		this.triggerPressed = triggerPressed;
 	}
-	public ArrayList<Projectile> getProjectiles() {
+	public ArrayList<Bullet> getProjectiles() {
 		return projectiles;
 	}
 	public int getKillStreak() {
@@ -153,9 +136,7 @@ public class RangedWeaponMetadata {
 	public boolean canFire() {
 		if(magazine>0&&ammo>0) {
 			if(System.currentTimeMillis()-lastTimeShot>=fireRate*1000) {
-				if(!isReloading()) {
-				return true;
-				}
+				return !isReloading();
 			}
 		}
 		return false;

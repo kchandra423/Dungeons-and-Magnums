@@ -12,8 +12,6 @@ import kchandra423.graphics.TwodGameThing;
 import kchandra423.shapes.Circle;
 import kchandra423.utility.Constants.multipliers;
 import kchandra423.utility.Constants.subclasses;
-import kchandra423.weapons.projectiles.AbilityBullet;
-import kchandra423.weapons.projectiles.ThrowingKnife;
 
 public class Rogue extends Player {
 	// there has seriously got to be a better way to do this than like this, but
@@ -22,7 +20,7 @@ public class Rogue extends Player {
 		super(loadSprites(x, y), 20, 2.5f, loadPlayerMetadata(), loadAbilities());
 	}
 
-	private ArrayList<AbilityBullet> shots = new ArrayList<AbilityBullet>();
+//	private ArrayList<AbilityBullet> shots = new ArrayList<AbilityBullet>();
 	private boolean firstShot;
 	private int shotsFired;
 	private Object synchronize;
@@ -158,9 +156,9 @@ public class Rogue extends Player {
 //							if (shots.get(i).hasHitEnemy()) {
 //								shotsHit++;
 //							}
-//					        
+//
 //						}
-//						
+//
 //						if (shotsHit < 5) {
 //							ability.setAbilityOnCooldown(true);
 //							ability.setTimeSinceUsedAbility(System.currentTimeMillis());
@@ -190,7 +188,7 @@ public class Rogue extends Player {
 //				shotsFired++;
 //			}
 //			if(shotsFired==5) {
-//			setAbilityOverRidingWeapon(0);	
+//			setAbilityOverRidingWeapon(0);
 //			}
 //			}
 //

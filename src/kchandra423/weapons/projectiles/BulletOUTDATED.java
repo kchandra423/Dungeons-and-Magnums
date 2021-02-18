@@ -1,29 +1,28 @@
-		velocity=0;
 //package kchandra423.weapons.projectiles;
 //import kchandra423.shapes.Line;
 //import processing.core.PApplet;
-//public class ThrowingKnife extends Line implements Projectile{
 //
+//public class Bullet extends Projectile{
 //	private final double velocity;
 //	private  double angle;
 //	private double vx,vy;
-//	private boolean isActive=true;
+//	protected boolean isActive=true;
 //	private boolean directionChanged=false;
 //	private int boundsX1, boundsY1, boundsX2, boundsY2;
-//	public ThrowingKnife(double x1, double y1, double x2, double y2) {
+//	private boolean hitEnemy;
+//	public Bullet(double x1, double y1, double x2, double y2) {
 //		super(x1, y1, x2, y2);
 //		velocity=0;
 //		angle=0;
 //
-//
 //		// TODO Auto-generated constructor stub
 //	}
 //
-//		public ThrowingKnife(double x1, double y1,
+//		public Bullet(double x1, double y1,
 //				double v, double theta,int boundsX1,
 //				int boundsY1, int boundsX2, int boundsY2) {
 //			//makes it seem like the bullet is facing the correct direction
-//			super(x1, y1, x1+10*Math.cos(theta), y1+10*Math.sin(theta));
+//			super(x1, y1, x1+2*Math.cos(theta), y1+2*Math.sin(theta));
 //			velocity=v;
 //			angle=theta;
 //			//yay physics, these are basically just the x and y components of the vector
@@ -35,7 +34,7 @@
 //			this.boundsY1=Math.min(boundsY1,boundsY2);
 //			this.boundsX2=Math.max(boundsX1, boundsX2);
 //			this.boundsY2=Math.max(boundsY1,boundsY2);
-//
+//			hitEnemy=false;
 //			// TODO Auto-generated constructor stub
 //		}
 ////		public void setUp(Gun owner) {
@@ -53,12 +52,12 @@
 //				pad.stroke(255,0,0);
 //			}
 //			pad.beginShape();
-//			pad.vertex((float)getx1(), (float)gety1());
+//			pad.vertex((float)getX(), (float)getY());
 //			pad.vertex((float)getx2(), (float)gety2());
 //			pad.endShape();
 //			pad.popStyle();
 //
-//			if(this.getx1()<boundsX1||this.getx1()>boundsX2||this.gety1()<boundsY1||this.gety1()>boundsY2) {
+//			if(this.getX()<boundsX1||this.getX()>boundsX2||this.getY()<boundsY1||this.getY()>boundsY2) {
 //					setInactive();
 //				}
 //			}
@@ -68,10 +67,7 @@
 //			}
 //		}
 //		public void move() {
-//			//change rotate method to rotate around center always, or smthing like that
-//			rotate(Math.PI/10);
 //			shift(vx,vy);
-//
 //		}
 ////public void changeDirections() {
 ////	if(directionChanged==false) {
@@ -97,17 +93,19 @@
 //		public boolean getDirectionChanged() {
 //			return directionChanged;
 //		}
+//		public boolean hasHitEnemy() {
+//			return hitEnemy;
+//		}
 //
 //		@Override
 //		public double getX() {
 //			// TODO Auto-generated method stub
-//			return getx1();
+//			return getX();
 //		}
 //
 //		@Override
 //		public double getY() {
 //			// TODO Auto-generated method stub
-//			return gety1();
+//			return getY();
 //		}
-//
 //}
