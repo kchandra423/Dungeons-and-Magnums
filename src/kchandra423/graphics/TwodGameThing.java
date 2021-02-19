@@ -12,7 +12,7 @@ import processing.core.PApplet;
  */
 public class TwodGameThing{
 
-	public static final int BOUNDSX=2000,BOUNDSY=1000;
+//	public static final int BOUNDSX=1500,BOUNDSY=1000;
 	
 	
 /**
@@ -26,10 +26,11 @@ public class TwodGameThing{
 		PSurfaceAWT.SmoothCanvas canvas = (PSurfaceAWT.SmoothCanvas) surf.getNative();
 		JFrame window = (JFrame)canvas.getFrame();
 
-		window.setSize(BOUNDSX, BOUNDSY);
-//		window.setMinimumSize(new Dimension(1000,100));
+//		window.setSize(BOUNDSX, BOUNDSY);
+		window.setMinimumSize(new Dimension(1500,1000));
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setResizable(false);
+		window.setResizable(true);
+
 
 		window.setVisible(true);
 		canvas.requestFocus();

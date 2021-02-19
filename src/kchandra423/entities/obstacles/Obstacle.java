@@ -1,9 +1,10 @@
 package kchandra423.entities.obstacles;
 
-import Sprite.SpriteRectangle;
-import Textures.Texture;
+
 import kchandra423.entities.Entity;
 import kchandra423.entities.actors.Actor;
+import kchandra423.graphics.Sprites.SpriteRectangle;
+import kchandra423.graphics.textures.Texture;
 import kchandra423.shapes.Rectangle;
 import kchandra423.shapes.Shape;
 import kchandra423.utility.Constants.collisionDirection;

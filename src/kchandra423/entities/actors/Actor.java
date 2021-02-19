@@ -2,9 +2,9 @@ package kchandra423.entities.actors;
 
 import java.util.Arrays;
 
-import Sprite.Sprite;
 import kchandra423.entities.Entity;
 import kchandra423.graphics.DrawingSurface;
+import kchandra423.graphics.Sprites.Sprite;
 
 public abstract class Actor extends Entity {
     private float vx, vy;

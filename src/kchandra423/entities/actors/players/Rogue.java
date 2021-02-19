@@ -3,10 +3,10 @@ package kchandra423.entities.actors.players;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import Sprite.Sprite;
-import Sprite.SpriteCircle;
-import Textures.Texture;
-import Textures.Texture.TextureBuilder;
+
+import kchandra423.graphics.Sprites.Sprite;
+import kchandra423.graphics.Sprites.SpriteCircle;
+import kchandra423.graphics.textures.Texture;
 import kchandra423.shapes.Circle;
 
 public class Rogue extends Player {
@@ -36,7 +36,6 @@ public class Rogue extends Player {
 
     @Override
     public void useAbility1() {
-        // TODO Auto-generated method stub
         // roll, theres literally no other options (maybe with attack at the end)
         AbilityMetadata ability = getAbility1();
         if (!ability.isAbilityOnCooldown()) {
@@ -65,13 +64,6 @@ public class Rogue extends Player {
                     setAccel(2.5f);
                 }
             }, (long) (0.15d * 1000));
-
-//			ability.getAbilityCooldownTimer().schedule(new TimerTask() {
-//				@Override
-//				public void run() {
-//					ability.setAbilityOnCooldown(false);
-//				}
-//			}, (long) (ability.getAbilityCooldown() * 1000));
         }
 
     }
@@ -215,12 +207,12 @@ public class Rogue extends Player {
 //	setSuperCooldown(120);
     private static Sprite[] loadSprites(float x, float y) {
         Sprite idle;
-        Texture tIdle = TextureBuilder.getTexture("res/Images/Players/MageIdle.gif");
+        Texture tIdle = Texture.TextureBuilder.getTexture("res/Images/Players/MageIdle.gif");
 //		tIdle.resize(80, 80);
         Circle cIdle = new Circle(x, y, tIdle.getWidth() - 20);
         idle = new SpriteCircle(tIdle, cIdle);
         Sprite active;
-        Texture tActive = TextureBuilder.getTexture("res/Images/Players/MageActive.gif");
+        Texture tActive = Texture.TextureBuilder.getTexture("res/Images/Players/MageActive.gif");
 //		tActive.resize(80, 80);
         // Circle cActive= new Circle(x,y,tActive.getWidth());
         active = new SpriteCircle(tActive, cIdle);

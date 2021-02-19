@@ -1,10 +1,12 @@
 package kchandra423.weapons;
+
 import java.util.ArrayList;
 import java.util.TimerTask;
-import Sprite.Sprite;
-import Sprite.SpriteCircle;
-import Sprite.SpriteRectangle;
-import Textures.Texture;
+
+import kchandra423.graphics.Sprites.Sprite;
+import kchandra423.graphics.Sprites.SpriteCircle;
+import kchandra423.graphics.Sprites.SpriteRectangle;
+import kchandra423.graphics.textures.Texture;
 import kchandra423.shapes.Circle;
 import kchandra423.shapes.Rectangle;
 import kchandra423.weapons.projectiles.Bullet;
@@ -26,13 +28,13 @@ public class RangedWeapon implements Weapon {
     }
 
     @Override
-    public void draw(PApplet p) {
+    public void draw(PApplet p,float offSetx, float offSetY) {
         ArrayList<Bullet> removes = new ArrayList<Bullet>();
         for (int i = 0; i < data.getProjectiles().size(); i++) {
             Bullet b = data.getProjectiles().get(i);
             if (b.isActive()) {
                 b.act();
-                b.draw(p);
+                b.draw(p,offSetx,offSetY);
             } else {
                 removes.add(b);
 
@@ -41,7 +43,7 @@ public class RangedWeapon implements Weapon {
         }
 
         data.getProjectiles().removeAll(removes);
-        sprite.draw(p);
+        sprite.draw(p,offSetx,offSetY);
 
     }
 
@@ -77,7 +79,6 @@ public class RangedWeapon implements Weapon {
 
     @Override
     public void shift(float xAmount, float yAmount) {
-
         sprite.shift(xAmount, yAmount);
     }
 
@@ -108,7 +109,8 @@ public class RangedWeapon implements Weapon {
 
     @Override
     public int getReloadPercentagee() {
-        return (int) ((data.getTimeSinceReloaded()/data.getReloadTime())*100);
+        int percentage = (int) ((data.getTimeSinceReloaded() / data.getReloadTime()) * 100);
+        return Math.min(percentage, 100);
     }
 
     @Override
@@ -153,6 +155,7 @@ public class RangedWeapon implements Weapon {
         data.setAngle((float) theta);
         sprite.setAngle((float) theta);
     }
+
     @Override
     public ArrayList<Bullet> getProjectiles() {
         return data.getProjectiles();

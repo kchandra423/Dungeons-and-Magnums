@@ -3,26 +3,26 @@ package kchandra423.entities.actors.players;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-import Sprite.Sprite;
+
 import kchandra423.entities.actors.Actor;
 import kchandra423.entities.obstacles.Obstacle;
 import kchandra423.graphics.DrawingSurface;
-
+import kchandra423.graphics.Sprites.Sprite;
 import kchandra423.utility.Calculator;
 import kchandra423.weapons.Weapon;
 import processing.core.PApplet;
 
 public abstract class Player extends Actor {
 
-    private PlayerMetadata playerInfo;
-    private ArrayList<Weapon> weapons;
-    private AbilityMetadata ability1;
-    private AbilityMetadata ability2;
-    private AbilityMetadata ability3;
-    private AbilityMetadata Super;
+    private final PlayerMetadata playerInfo;
+    private final ArrayList<Weapon> weapons;
+    private final AbilityMetadata ability1;
+    private final AbilityMetadata ability2;
+    private final AbilityMetadata ability3;
+    private final AbilityMetadata Super;
     private int lastState;
     //the arrays format goes [idle, walking, maybe something else??]
-    private Sprite[] sprites;
+    private final Sprite[] sprites;
 
     public Player(Sprite[] sprites,  float accel, PlayerMetadata playerData, AbilityMetadata[] abilityData) {
         super(sprites[0], playerData.getBaseV(), accel);
@@ -93,11 +93,11 @@ public abstract class Player extends Actor {
     }
 
     @Override
-    public void draw(PApplet p) {
-        super.draw(p);
+    public void draw(PApplet p, float offSetX, float offSetY) {
+        super.draw(p,offSetX,offSetY);
 
 
-        weapons.get(0).draw(p);
+        weapons.get(0).draw(p, offSetX, offSetY);
     }
 
     protected void updateState() {
@@ -144,7 +144,9 @@ public abstract class Player extends Actor {
             }
         }
         updateState();
-        float angle = (float) Calculator.calculateAngle(getSprite().getX(), getSprite().getY(),
+        int halfx=d.width/2,halfy=d.height/2;
+//        float difx=(getSprite().getX()-halfx),dify=(getSprite().getY()-halfy);
+        float angle = (float) Calculator.calculateAngle(halfx, halfy,
                 d.mouseX, d.mouseY);
         playerInfo.setAngle(angle);
 

@@ -1,10 +1,9 @@
 package kchandra423.weapons.projectiles;
 
-import Sprite.Sprite;
-import kchandra423.graphics.TwodGameThing;
+import kchandra423.graphics.Sprites.Sprite;
 import processing.core.PApplet;
 
-public class Bullet implements Projectile{
+public class Bullet implements Projectile {
     private boolean active;
     private Sprite s;
     private boolean hitEnemy;
@@ -20,20 +19,22 @@ public class Bullet implements Projectile{
         data = new ProjectileMetadata(initialV, initialAngle);
     }
 
-    public void draw(PApplet p) {
+    public void draw(PApplet p, float offSetX, float offSetY) {
         if (isActive())
-            s.draw(p);
+            s.draw(p,offSetX,offSetY);
+        if (s.getX()+offSetX < 0 || s.getX()+offSetX > p.width) {
+            setActive(false);
+        }
+        if (s.getY()+offSetY < 0 || s.getY()+offSetY > p.height) {
+            setActive(false);
+        }
+
     }
 
     public void act() {
         if (isActive()) {
             move();
-            if (s.getX() < 0 || s.getX() > TwodGameThing.BOUNDSX) {
-                setActive(false);
-            }
-            if (s.getY() < 0 || s.getY() > TwodGameThing.BOUNDSY) {
-                setActive(false);
-            }
+
         }
     }
 
@@ -46,6 +47,8 @@ public class Bullet implements Projectile{
     }
 
     private void setActive(boolean active) {
+        if (!active)
+            System.out.println("ok!");
         this.active = active;
     }
 

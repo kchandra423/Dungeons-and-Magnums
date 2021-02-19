@@ -1,5 +1,6 @@
 package kchandra423.entities;
-import Sprite.Sprite;
+
+import kchandra423.graphics.Sprites.Sprite;
 import processing.core.PApplet;
 
 public class Entity {
@@ -7,8 +8,8 @@ public class Entity {
 	public Entity(Sprite sprite) {
 		this.sprite=sprite;
 	}
-	public void draw(PApplet p) {
-		sprite.draw(p);
+	public void draw(PApplet p, float offSetX, float offSetY) {
+		sprite.draw(p,offSetX,offSetY);
 	}
 	public Sprite getSprite() {
 		return sprite;
