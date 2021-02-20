@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import kchandra423.entities.Entity;
 import kchandra423.graphics.DrawingSurface;
+import kchandra423.graphics.Room;
 import kchandra423.graphics.Sprites.Sprite;
 
 public abstract class Actor extends Entity {
@@ -30,7 +31,7 @@ public abstract class Actor extends Entity {
         setVy(getVy() * -0.3f);
     }
 
-    public abstract void act(DrawingSurface d);
+    public abstract void act(DrawingSurface d, Room r);
 
     //array format is  left, right
     protected void moveX(boolean[] directions) {

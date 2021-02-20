@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import kchandra423.entities.actors.Actor;
 import kchandra423.entities.obstacles.Obstacle;
 import kchandra423.graphics.DrawingSurface;
+import kchandra423.graphics.Room;
 import kchandra423.graphics.Sprites.Sprite;
 import kchandra423.utility.Calculator;
 import kchandra423.weapons.Weapon;
@@ -120,7 +121,7 @@ public abstract class Player extends Actor {
     }
 
     @Override
-    public void act(DrawingSurface d) {
+    public void act(DrawingSurface d, Room r) {
         boolean up = DrawingSurface.getKey(KeyEvent.VK_W);
         boolean left = DrawingSurface.getKey(KeyEvent.VK_A);
         boolean down = DrawingSurface.getKey(KeyEvent.VK_S);
@@ -128,7 +129,7 @@ public abstract class Player extends Actor {
         usePassive();
         super.moveX(new boolean[]{left, right});
         weapons.get(0).shift(getVx(), 0);
-        Obstacle[] obstacles = d.getObstacles();
+        Obstacle[] obstacles = r.getObstacles();
         for (Obstacle o : obstacles) {
             if (o.intersects(this)) {
                 bounceBackX();

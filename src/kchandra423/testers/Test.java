@@ -1,7 +1,6 @@
 package kchandra423.testers;
 
 import kchandra423.files.FileManager;
-import kchandra423.shapes.*;
 public class Test {
 	//while in development, ill just write stuff here, and just use the keys by myself
 	// and not store them all in one place, just to make it slighlty more a pain in the

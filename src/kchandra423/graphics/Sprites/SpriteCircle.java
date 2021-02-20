@@ -1,8 +1,9 @@
 package kchandra423.graphics.Sprites;
 
 
+import kchandra423.graphics.shapes.Circle;
 import kchandra423.graphics.textures.Texture;
-import kchandra423.shapes.Circle;
+import kchandra423.graphics.shapes.Circle;
 import processing.core.PApplet;
 import processing.core.PConstants;
 

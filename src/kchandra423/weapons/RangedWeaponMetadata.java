@@ -6,6 +6,7 @@ import java.util.TimerTask;
 
 import kchandra423.files.FileManager;
 import kchandra423.weapons.projectiles.Bullet;
+import kchandra423.weapons.projectiles.Projectile;
 
 public class RangedWeaponMetadata {
 	private final String name;
@@ -29,7 +30,7 @@ public class RangedWeaponMetadata {
 	private int killStreak;
 	private boolean triggerPressed;
 	private final boolean center;
-	private final ArrayList<Bullet> projectiles= new ArrayList<Bullet>();
+	private final ArrayList<Projectile> projectiles= new ArrayList<>();
 	public RangedWeaponMetadata(int weaponId) {
 		this.id=weaponId;
 		reloading=false;
@@ -124,7 +125,7 @@ public class RangedWeaponMetadata {
 	public void setTriggerPressed(boolean triggerPressed) {
 		this.triggerPressed = triggerPressed;
 	}
-	public ArrayList<Bullet> getProjectiles() {
+	public ArrayList<Projectile> getProjectiles() {
 		return projectiles;
 	}
 	public int getKillStreak() {

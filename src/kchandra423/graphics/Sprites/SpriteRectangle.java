@@ -1,7 +1,7 @@
 package kchandra423.graphics.Sprites;
 
 import kchandra423.graphics.textures.Texture;
-import kchandra423.shapes.Rectangle;
+import kchandra423.graphics.shapes.Rectangle;
 import processing.core.PApplet;
 import processing.core.PConstants;
 

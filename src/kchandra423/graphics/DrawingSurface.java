@@ -1,12 +1,9 @@
 package kchandra423.graphics;
 
-import kchandra423.entities.*;
+
 import kchandra423.entities.actors.players.Player;
 import kchandra423.entities.actors.players.Rogue;
-import kchandra423.entities.obstacles.Obstacle;
-import kchandra423.graphics.textures.Texture;
-import kchandra423.shapes.Rectangle;
-import kchandra423.utility.Constants.collisionDirection;
+
 import kchandra423.weapons.RangedWeapon;
 import processing.core.PApplet;
 
@@ -17,23 +14,22 @@ import processing.core.PApplet;
  */
 public class DrawingSurface extends PApplet {
 
-
+//    private PImage background;
     private static boolean[] keys;
-    private Player p;
-    private Obstacle[] obstacles;
+//    private Player p;
+//    private Obstacle[] obstacles;
+    private Room r;
 
     /**
      * Creates a new Drawing surface
      */
     public DrawingSurface() {
         keys = new boolean[128];
-        Texture t = Texture.TextureBuilder.getTexture("res/Images/Obstacles/Box.png");
-        Obstacle o = new Obstacle(t, new Rectangle(500, 500, t.getWidth(), t.getHeight()));
-        Obstacle o2 = new Obstacle(t, new Rectangle(1000, 500, t.getWidth(), t.getHeight()));
 
-        obstacles = new Obstacle[]{o, o2};
-        p = new Rogue(50, 50);
+
+        Player p = new Rogue(50, 50);
         p.addWeapon(new RangedWeapon(1, p.getSprite().getX(), p.getSprite().getY()));
+        r = new Room(p);
 
     }
 
@@ -50,6 +46,7 @@ public class DrawingSurface extends PApplet {
 
     public void setup() {
         frameRate(30);
+//        background= loadImage("res/Images/Backgrounds/froggy.jpg");
 
     }
 
@@ -62,19 +59,25 @@ public class DrawingSurface extends PApplet {
      * draws everything in the drawing surface
      */
     public void draw() {
-        background(170);   // Clear the screen with a white background
+//        background.resize(width,height);
+        background(255);   // Clear the screen with a white background
 //		System.out.println(frameRate);
-        p.act(this);
+//        p.act(this);
 //        pushMatrix();
-
-        int halfx=width/2,halfy=height/2;
-        float difx=(p.getSprite().getX()-halfx),dify=(p.getSprite().getY()-halfy);
-//        translate(-difx,-dify);
-        for (Obstacle o : obstacles) {
-            o.draw(this,-difx,-dify);
-        }
-
-        p.draw(this,-difx,-dify);
+        r.draw(this);
+//        int halfx=width/2,halfy=height/2;
+//        float difx=(p.getSprite().getX()-halfx),dify=(p.getSprite().getY()-halfy);
+////        translate(-difx,-dify);
+//        for (Obstacle o : obstacles) {
+//            o.draw(this,-difx,-dify);
+//            for (Projectile p : p.getCurrentWeapon().getProjectiles()){
+//                if(p.intersects(o)){
+//                    p.setActive(false);
+//                }
+//            }
+//        }
+//
+//        p.draw(this,-difx,-dify);
 
 //        popMatrix();
 
@@ -106,9 +109,9 @@ public class DrawingSurface extends PApplet {
 
     }
 
-    public Obstacle[] getObstacles() {
-        return obstacles;
-    }
+//    public Obstacle[] getObstacles() {
+//        return obstacles;
+//    }
 
 }
 

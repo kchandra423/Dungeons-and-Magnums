@@ -7,7 +7,7 @@ import java.util.TimerTask;
 import kchandra423.graphics.Sprites.Sprite;
 import kchandra423.graphics.Sprites.SpriteCircle;
 import kchandra423.graphics.textures.Texture;
-import kchandra423.shapes.Circle;
+import kchandra423.graphics.shapes.Circle;
 
 public class Rogue extends Player {
     // there has seriously got to be a better way to do this than like this, but

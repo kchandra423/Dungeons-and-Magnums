@@ -7,9 +7,9 @@ import kchandra423.graphics.Sprites.Sprite;
 import kchandra423.graphics.Sprites.SpriteCircle;
 import kchandra423.graphics.Sprites.SpriteRectangle;
 import kchandra423.graphics.textures.Texture;
-import kchandra423.shapes.Circle;
-import kchandra423.shapes.Rectangle;
+import kchandra423.graphics.shapes.*;
 import kchandra423.weapons.projectiles.Bullet;
+import kchandra423.weapons.projectiles.Projectile;
 import processing.core.PApplet;
 
 public class RangedWeapon implements Weapon {
@@ -28,22 +28,21 @@ public class RangedWeapon implements Weapon {
     }
 
     @Override
-    public void draw(PApplet p,float offSetx, float offSetY) {
-        ArrayList<Bullet> removes = new ArrayList<Bullet>();
+    public void draw(PApplet p, float offSetx, float offSetY) {
+        ArrayList<Projectile> removes = new ArrayList<Projectile>();
         for (int i = 0; i < data.getProjectiles().size(); i++) {
-            Bullet b = data.getProjectiles().get(i);
+            Projectile b = data.getProjectiles().get(i);
             if (b.isActive()) {
                 b.act();
-                b.draw(p,offSetx,offSetY);
+                b.draw(p, offSetx, offSetY);
             } else {
                 removes.add(b);
-
             }
 
         }
 
         data.getProjectiles().removeAll(removes);
-        sprite.draw(p,offSetx,offSetY);
+        sprite.draw(p, offSetx, offSetY);
 
     }
 
@@ -157,7 +156,7 @@ public class RangedWeapon implements Weapon {
     }
 
     @Override
-    public ArrayList<Bullet> getProjectiles() {
+    public ArrayList<Projectile> getProjectiles() {
         return data.getProjectiles();
     }
 

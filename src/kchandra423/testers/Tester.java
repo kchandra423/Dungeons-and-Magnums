@@ -1,7 +1,5 @@
 package kchandra423.testers;
-import kchandra423.shapes.Circle;
-import kchandra423.shapes.Line;
-import kchandra423.shapes.Rectangle;
+
 
 /**
  * basic tester class

@@ -2,7 +2,7 @@ package kchandra423.graphics.Sprites;
 
 import kchandra423.graphics.textures.Fader;
 import kchandra423.graphics.textures.Texture;
-import kchandra423.shapes.Shape;
+import kchandra423.graphics.shapes.*;
 import processing.core.PApplet;
 public abstract class Sprite {
 	protected float angle;
