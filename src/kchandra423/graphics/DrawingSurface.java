@@ -1,6 +1,6 @@
 package kchandra423.graphics;
 
-
+import processing.core.PConstants;
 import kchandra423.entities.actors.players.Player;
 import kchandra423.entities.actors.players.Rogue;
 
@@ -40,7 +40,7 @@ public class DrawingSurface extends PApplet {
      * doesn't do anything as of right now
      */
     public void settings() {
-//        size(1500, 1000);
+        size(1500, 1000, PConstants.P2D);
 //        fullScreen();
     }
 
@@ -61,7 +61,7 @@ public class DrawingSurface extends PApplet {
     public void draw() {
 //        background.resize(width,height);
         background(255);   // Clear the screen with a white background
-//		System.out.println(frameRate);
+		System.out.println(frameRate);
 //        p.act(this);
 //        pushMatrix();
         r.draw(this);

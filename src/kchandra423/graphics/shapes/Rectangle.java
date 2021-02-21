@@ -87,6 +87,21 @@ public class Rectangle extends Shape {
 		pad.popStyle();
 		
 	}
+	public void draw(PApplet pad, float offSetX, float offSetY){
+		pad.pushStyle();
+		super.draw(pad);
+		double tlx=top.getX()+offSetX;
+		double tly= top.getY()+offSetY;
+		double blx=bottom.getx2()+offSetX;
+		double bly=bottom.gety2()+offSetY;
+		double trx=top.getx2()+offSetX;
+		double tryButImagineThatsNotAKeyword= top.gety2()+offSetY;
+		double brx=bottom.getX()+offSetX;
+		double bry= bottom.getY()+offSetY;
+
+		pad.quad((float)tlx, (float)tly,(float)trx,(float)tryButImagineThatsNotAKeyword, (float) blx,(float) bly,(float) brx,(float) bry);
+		pad.popStyle();
+	}
 	/**
 	 * checks if a point is inside rectangle
 	 * @param x x coord of point

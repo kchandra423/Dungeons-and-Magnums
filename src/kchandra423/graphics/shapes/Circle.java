@@ -190,7 +190,6 @@ public class Circle extends Shape {
  }
 @Override
 public boolean intersects(Shape other) throws Exception {
-	// TODO Auto-generated method stub
 	if(other instanceof Circle) {
 		return intersectsEdge( ((Circle)other));
 	}

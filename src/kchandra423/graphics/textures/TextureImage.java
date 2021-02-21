@@ -22,59 +22,66 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 package kchandra423.graphics.textures;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+
 import processing.core.PApplet;
 import processing.core.PImage;
-class TextureImage extends Texture{
-	private PImage image;
-	private Fader fader;
-	TextureImage(String pathName) {
-		fader=null;
-		BufferedImage img = null;
-		try {
-		    img = ImageIO.read(new File(pathName));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		image=new PImage(img);
-	}
-	@Override
-	public void draw(PApplet p, float x, float y) {
-        p.image(image,x,y);
-		if(fader!=null) {
-			fader.draw(p);
-		}
-		
-	}
 
-	@Override
-	public void resize(int w, int h) {
-		image.resize(w, h);
-		
-	}
+class TextureImage extends Texture {
+    private PImage image;
+    private Fader fader;
 
-	@Override
-	public float getWidth() {
-		return image.width;
-	}
+    TextureImage(String pathName) {
+        fader = null;
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(new File(pathName));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        image = new PImage(img);
+    }
 
-	@Override
-	public float getHeight() {
-		return image.height;
-	}
-	@Override
-	public void fadeOut() {
-		fader=new Fader(255,0,0.2f);
-		fader.start();
-	}
-	@Override
-	public void fadeIn() {
-		fader=new Fader(0,255,0.2f);
-		fader.start();
-	}
-	
-	
+    @Override
+    public void draw(PApplet p, float x, float y) {
+        p.image(image, (int) x, (int) y);
+        if (fader != null) {
+            fader.draw(p);
+        }
+
+    }
+
+    @Override
+    public void resize(int w, int h) {
+        image.resize(w, h);
+
+    }
+
+    @Override
+    public float getWidth() {
+        return image.width;
+    }
+
+    @Override
+    public float getHeight() {
+        return image.height;
+    }
+
+    @Override
+    public void fadeOut() {
+        fader = new Fader(255, 0, 0.2f);
+        fader.start();
+    }
+
+    @Override
+    public void fadeIn() {
+        fader = new Fader(0, 255, 0.2f);
+        fader.start();
+    }
+
+
 }

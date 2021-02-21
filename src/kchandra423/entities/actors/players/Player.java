@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 import kchandra423.entities.actors.Actor;
+import kchandra423.entities.obstacles.Collideable;
 import kchandra423.entities.obstacles.Obstacle;
 import kchandra423.graphics.DrawingSurface;
 import kchandra423.graphics.Room;
@@ -129,19 +130,27 @@ public abstract class Player extends Actor {
         usePassive();
         super.moveX(new boolean[]{left, right});
         weapons.get(0).shift(getVx(), 0);
-        Obstacle[] obstacles = r.getObstacles();
-        for (Obstacle o : obstacles) {
-            if (o.intersects(this)) {
-                bounceBackX();
-                break;
+        Collideable[] obstacles = r.getCollideables();
+        for (Collideable o : obstacles) {
+            try {
+                if (o.intersects(this.getSprite().getShape())) {
+                    bounceBackX();
+                    break;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         super.moveY(new boolean[]{up, down});
         weapons.get(0).shift(0, getVy());
-        for (Obstacle o : obstacles) {
-            if (o.intersects(this)) {
-                bounceBackY();
-                break;
+        for (Collideable o : obstacles) {
+            try {
+                if (o.intersects(this.getSprite().getShape())) {
+                    bounceBackY();
+                    break;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         updateState();

@@ -27,9 +27,10 @@ public class TwodGameThing{
 		JFrame window = (JFrame)canvas.getFrame();
 
 //		window.setSize(BOUNDSX, BOUNDSY);
+		window.setSize(1500,100);
 		window.setMinimumSize(new Dimension(1500,1000));
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setResizable(true);
+		window.setResizable(false);
 
 
 		window.setVisible(true);
