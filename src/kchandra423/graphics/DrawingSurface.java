@@ -40,12 +40,12 @@ public class DrawingSurface extends PApplet {
      * doesn't do anything as of right now
      */
     public void settings() {
-        size(1500, 1000, PConstants.P2D);
+        size(1500, 1000, P2D);
 //        fullScreen();
     }
 
     public void setup() {
-        frameRate(30);
+        frameRate(1000);
 //        background= loadImage("res/Images/Backgrounds/froggy.jpg");
 
     }
