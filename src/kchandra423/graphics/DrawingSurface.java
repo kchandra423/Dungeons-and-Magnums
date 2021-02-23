@@ -40,12 +40,26 @@ public class DrawingSurface extends PApplet {
      * doesn't do anything as of right now
      */
     public void settings() {
-        size(1500, 1000, P2D);
+//        boolean versionCompatibleWP2D=false;
+        System.out.println(javaVersionName);
+        System.out.println(javaPlatform);
+//        if(System.getProperty("os.name").equals("Windows")){
+//            versionCompatibleWP2D=true;
+//        }else{
+//            if(javaVersionName.equals("1.8.242")){
+//                versionCompatibleWP2D=true;
+//            }
+//        }
+//        if(versionCompatibleWP2D)
+            size(1500, 1000, JAVA2D);
+//        else
+//            size(1500, 1000, JAVA2D);
+
 //        fullScreen();
     }
 
     public void setup() {
-        frameRate(1000);
+        frameRate(60);
 //        background= loadImage("res/Images/Backgrounds/froggy.jpg");
 
     }
@@ -61,7 +75,7 @@ public class DrawingSurface extends PApplet {
     public void draw() {
 //        background.resize(width,height);
         background(255);   // Clear the screen with a white background
-		System.out.println(frameRate);
+//		System.out.println(frameRate);
 //        p.act(this);
 //        pushMatrix();
         r.draw(this);
