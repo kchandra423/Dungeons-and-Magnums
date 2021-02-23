@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Added images directly to project">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kchandra423/testers/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/testers/Tester.java" afterDir="false" />
-    </list>
+    <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Added images directly to project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +123,7 @@
       <workItem from="1614017118020" duration="1652000" />
       <workItem from="1614062027742" duration="175000" />
       <workItem from="1614114549856" duration="1287000" />
-      <workItem from="1614116184492" duration="296000" />
+      <workItem from="1614116184492" duration="468000" />
     </task>
     <task id="LOCAL-00001" summary="Through intelliJ :)">
       <created>1613684087506</created>
