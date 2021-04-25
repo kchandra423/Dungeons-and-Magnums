@@ -41,8 +41,8 @@ public class DrawingSurface extends PApplet {
      */
     public void settings() {
 //        boolean versionCompatibleWP2D=false;
-        System.out.println(javaVersionName);
-        System.out.println(javaPlatform);
+//        System.out.println(javaVersionName);
+//        System.out.println(javaPlatform);
 //        if(System.getProperty("os.name").equals("Windows")){
 //            versionCompatibleWP2D=true;
 //        }else{

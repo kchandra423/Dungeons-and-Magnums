@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Added images directly to project" />
+    <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Added images directly to project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2dGameThing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2dGameThing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,7 +52,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -124,6 +128,16 @@
       <workItem from="1614062027742" duration="175000" />
       <workItem from="1614114549856" duration="1287000" />
       <workItem from="1614116184492" duration="468000" />
+      <workItem from="1614123466234" duration="637000" />
+      <workItem from="1614839540211" duration="775000" />
+      <workItem from="1618005534215" duration="462000" />
+      <workItem from="1618871450042" duration="176000" />
+      <workItem from="1619298034612" duration="452000" />
+      <workItem from="1619299821293" duration="389000" />
+      <workItem from="1619300729368" duration="8000" />
+      <workItem from="1619301161220" duration="1347000" />
+      <workItem from="1619324114623" duration="356000" />
+      <workItem from="1619388042184" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Through intelliJ :)">
       <created>1613684087506</created>
