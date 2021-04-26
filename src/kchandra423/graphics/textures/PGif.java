@@ -34,18 +34,13 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 class PGif extends Texture {
-    private Fader fader;
     private Frame[] frames;
     private int curFrame;
     private long lastTime;
 
     PGif(String pathname) {
-        fader = null;
         try {
             frames = getFrames(pathname);
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -63,22 +58,30 @@ class PGif extends Texture {
         return answer;
     }
 
-    public void draw(PApplet p, float x, float y) {
+    public void draw(PApplet p, int x, int y, float angle) {
 
         PImage curImage = frames[curFrame].getImage();
 
-        p.image(curImage, (int)x, (int)y);
-        if (fader != null) {
-            fader.draw(p);
-        }
+        p.pushMatrix();
+
+        p.rotate(angle);
+        p.image(curImage, x, y);
+
+        p.popMatrix();
+
         advanceFrame();
 
+    }
+
+    @Override
+    public PImage getImage() {
+        return frames[curFrame].getImage();
     }
 
     private void advanceFrame() {
         long curTime = System.currentTimeMillis();
         //.getDelay return time in 100ths of a second
-        if (curTime >= lastTime + frames[curFrame].getDelay() * 10) {
+        if (curTime >= lastTime + frames[curFrame].getDelay() * 10L) {
             lastTime = curTime;
             curFrame++;
             if (curFrame >= frames.length) {
@@ -89,32 +92,32 @@ class PGif extends Texture {
 
     @Override
     public void resize(int w, int h) {
-        for (int i = 0; i < frames.length; i++) {
-            frames[i].getImage().resize(w, h);
+        for (Frame frame : frames) {
+            frame.getImage().resize(w, h);
         }
     }
 
     @Override
-    public float getWidth() {
+    public int getWidth() {
         return frames[curFrame].getImage().width;
     }
 
     @Override
-    public float getHeight() {
+    public int getHeight() {
         return frames[curFrame].getImage().height;
     }
 
-    @Override
-    public void fadeOut() {
-        fader = new Fader(255, 0, 0.2f);
-        fader.start();
-    }
-
-    @Override
-    public void fadeIn() {
-        fader = new Fader(0, 255, 0.2f);
-        fader.start();
-    }
+//    @Override
+//    public void fadeOut() {
+//        fader = new Fader(255, 0, 0.2f);
+//        fader.start();
+//    }
+//
+//    @Override
+//    public void fadeIn() {
+//        fader = new Fader(0, 255, 0.2f);
+//        fader.start();
+//    }
 
     private class Frame {
         private final PImage image;

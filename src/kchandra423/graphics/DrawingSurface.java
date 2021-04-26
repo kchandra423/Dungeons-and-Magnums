@@ -1,10 +1,7 @@
 package kchandra423.graphics;
 
-import processing.core.PConstants;
-import kchandra423.entities.actors.players.Player;
-import kchandra423.entities.actors.players.Rogue;
-
-import kchandra423.weapons.RangedWeapon;
+import kchandra423.graphics.textures.KImage;
+import kchandra423.graphics.textures.Texture;
 import processing.core.PApplet;
 
 /**
@@ -14,22 +11,19 @@ import processing.core.PApplet;
  */
 public class DrawingSurface extends PApplet {
 
-//    private PImage background;
+    //    private PImage background;
     private static boolean[] keys;
-//    private Player p;
+    //    private Player p;
 //    private Obstacle[] obstacles;
-    private Room r;
-
+//    private Room r;
+    private KImage p1 = new KImage(Texture.TextureBuilder.getTexture("res/Images/Players/MageIdle.gif"));
+    private KImage p2 = new KImage(Texture.TextureBuilder.getTexture("res/Images/Players/RogueIdle.gif"));
     /**
      * Creates a new Drawing surface
      */
     public DrawingSurface() {
         keys = new boolean[128];
 
-
-        Player p = new Rogue(50, 50);
-        p.addWeapon(new RangedWeapon(1, p.getSprite().getX(), p.getSprite().getY()));
-        r = new Room(p);
 
     }
 
@@ -40,27 +34,12 @@ public class DrawingSurface extends PApplet {
      * doesn't do anything as of right now
      */
     public void settings() {
-//        boolean versionCompatibleWP2D=false;
-//        System.out.println(javaVersionName);
-//        System.out.println(javaPlatform);
-//        if(System.getProperty("os.name").equals("Windows")){
-//            versionCompatibleWP2D=true;
-//        }else{
-//            if(javaVersionName.equals("1.8.242")){
-//                versionCompatibleWP2D=true;
-//            }
-//        }
-//        if(versionCompatibleWP2D)
-            size(1500, 1000, JAVA2D);
-//        else
-//            size(1500, 1000, JAVA2D);
+        size(1500, 1000, P2D);
 
-//        fullScreen();
     }
 
     public void setup() {
-        frameRate(60);
-//        background= loadImage("res/Images/Backgrounds/froggy.jpg");
+        frameRate(1000);
 
     }
 
@@ -73,34 +52,43 @@ public class DrawingSurface extends PApplet {
      * draws everything in the drawing surface
      */
     public void draw() {
-//        background.resize(width,height);
-        background(255);   // Clear the screen with a white background
-//		System.out.println(frameRate);
-//        p.act(this);
-//        pushMatrix();
-        r.draw(this);
-//        int halfx=width/2,halfy=height/2;
-//        float difx=(p.getSprite().getX()-halfx),dify=(p.getSprite().getY()-halfy);
-////        translate(-difx,-dify);
-//        for (Obstacle o : obstacles) {
-//            o.draw(this,-difx,-dify);
-//            for (Projectile p : p.getCurrentWeapon().getProjectiles()){
-//                if(p.intersects(o)){
-//                    p.setActive(false);
-//                }
-//            }
-//        }
-//
-//        p.draw(this,-difx,-dify);
-
-//        popMatrix();
+        background(255);
+        p1.draw(this);
+        p2.draw(this);
+        if(p1.intersects(p2)){
+            System.out.println("urmom");
+        }
 
     }
 
     public void keyPressed() {
-        if (keyCode < 128) {
-            keys[keyCode] = true;
+        if (key=='d'){
+            p1.translate(6,0);
         }
+        else if (key== 'w'){
+            p1.translate(0,-6);
+        }
+        else if (key== 'a'){
+            p1.translate(-6,0);
+        }
+        else if (key== 's'){
+            p1.translate(0,6);
+        }
+        if (key=='l'){
+            p2.translate(6,0);
+        }
+        else if (key== 'i'){
+            p2.translate(0,-6);
+        }
+        else if (key== 'j'){
+            p2.translate(-6,0);
+        }
+        else if (key== 'k'){
+            p2.translate(0,6);
+        }
+//        if (keyCode < 128) {
+//            keys[keyCode] = true;
+//        }
 
 
     }
@@ -122,10 +110,6 @@ public class DrawingSurface extends PApplet {
         return keys[keyCode];
 
     }
-
-//    public Obstacle[] getObstacles() {
-//        return obstacles;
-//    }
 
 }
 

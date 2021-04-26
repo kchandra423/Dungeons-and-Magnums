@@ -22,101 +22,69 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package kchandra423.graphics.textures;
+
 import processing.core.PApplet;
+import processing.core.PImage;
 // import processing.core.PApplet;
+
 /**
  * Represents an image that can be moved around and resized. Supports Gif, jpeg, and png images.
  * Gifs will be properly animated. Uses processing to draw.
- * @author Kumar Chandra
  *
+ * @author Kumar Chandra
  */
-public abstract class Texture{
-	
-//	public drawMode getMode() {
-//		return currentMode;
-//	}
-//	public void setMode(drawMode mode) {
-//		currentMode=mode;
-//	}
-//	private float angle;
-//	private Shape s;
-//	public static enum drawMode{
-//		CENTER,CORNER;
-//	}
-//	private drawMode currentMode;
-//	public float getAngle() {
-//		return angle;
-//	}
-//	public void setAngle(float angle) {
-//		this.angle=angle;
-//	}
-	/**
-	 * Resizes the textures image to the given width and height
-	 * @param w new width of texture
-	 * @param h new height of texture
-	 */
-	public abstract void resize(int w, int h);
-	/**
-	 * Returns the current width of the image
-	 * @return
-	 */
-	public abstract float getWidth();
-	/**
-	 * Returns the current height of the image
-	 * @return
-	 */
-	public abstract float getHeight();
-	/**
-	 * Draws the texture onto the given PApplet
-	 * @param p The given PApplet to be drawn to
-	 */
-	public abstract void draw(PApplet p, float x, float y);
-	/**
-	 * Returns the current x coordinate of the texture
-	 * @return current x coordinate
-	 */
-	
-	/**
-	 * Fades the image until it is transparent
-	 */
-	public abstract void fadeOut();
-	/**
-	 * Fades the image from transparent to opaque
-	 */
-	public abstract void fadeIn();
-	/**
-	 * Used to create a Texture given its pathname
-	 * Supports gifs, jpegs, and pngs
-	 * @author Kumar Chandra
-	 *
-	 */
-	public static class TextureBuilder{
-		/**
-		 * Creates a Texture from the image at the given path name
-		 * @param pathName The path to the Image
-		 * @return A texture at 0,0 with the image at the pathname
-		 */
-		public static Texture getTexture(String pathName) {
-			if(pathName.substring(pathName.length()-4, pathName.length()).equals(".gif")){
-				PGif answer= new PGif(pathName);
-				return answer;
-			}else {
-				TextureImage answer= new TextureImage(pathName);
-				return answer;
-			}
-		}
-	}
-//	public int getProcessingImageMode() {
-//		if(currentMode==drawMode.CENTER) {
-//			return PApplet.CENTER;
-//		}else if(currentMode==drawMode.CORNER){
-//			return PApplet.CORNER;
-//		}else {
-//			return -1;
-//		}
-//	}
-//	public Shape getShape() {
-//		return s;
-//	}
-	
+public abstract class Texture {
+    /**
+     * Resizes the textures image to the given width and height
+     *
+     * @param w new width of texture
+     * @param h new height of texture
+     */
+    public abstract void resize(int w, int h);
+
+    /**
+     * Returns the current width of the image
+     *
+     * @return
+     */
+    public abstract int getWidth();
+
+    /**
+     * Returns the current height of the image
+     *
+     * @return
+     */
+    public abstract int getHeight();
+
+    /**
+     * Draws the texture onto the given PApplet
+     *
+     * @param p The given PApplet to be drawn to
+     */
+    public abstract void draw(PApplet p, int x, int y, float angle);
+
+    public abstract PImage getImage();
+
+    /**
+     * Used to create a Texture given its pathname
+     * Supports gifs, jpegs, and pngs
+     *
+     * @author Kumar Chandra
+     */
+    public static class TextureBuilder {
+        /**
+         * Creates a Texture from the image at the given path name
+         *
+         * @param pathName The path to the Image
+         * @return A texture at 0,0 with the image at the pathname
+         */
+        public static Texture getTexture(String pathName) {
+            if (pathName.substring(pathName.length() - 4, pathName.length()).equals(".gif")) {
+                return new PGif(pathName);
+            } else {
+                return new TextureImage(pathName);
+            }
+        }
+    }
+
 }

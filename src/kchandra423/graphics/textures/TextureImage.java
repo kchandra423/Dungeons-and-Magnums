@@ -33,10 +33,8 @@ import processing.core.PImage;
 
 class TextureImage extends Texture {
     private PImage image;
-    private Fader fader;
 
     TextureImage(String pathName) {
-        fader = null;
         BufferedImage img = null;
         try {
             img = ImageIO.read(new File(pathName));
@@ -47,12 +45,16 @@ class TextureImage extends Texture {
     }
 
     @Override
-    public void draw(PApplet p, float x, float y) {
-        p.image(image, (int) x, (int) y);
-        if (fader != null) {
-            fader.draw(p);
-        }
+    public void draw(PApplet p, int x, int y, float angle) {
+        p.pushMatrix();
+        p.rotate(angle);
+        p.image(image, x, y);
+        p.popMatrix();
+    }
 
+    @Override
+    public PImage getImage() {
+        return image;
     }
 
     @Override
@@ -62,26 +64,15 @@ class TextureImage extends Texture {
     }
 
     @Override
-    public float getWidth() {
+    public int getWidth() {
         return image.width;
     }
 
     @Override
-    public float getHeight() {
+    public int getHeight() {
         return image.height;
     }
 
-    @Override
-    public void fadeOut() {
-        fader = new Fader(255, 0, 0.2f);
-        fader.start();
-    }
-
-    @Override
-    public void fadeIn() {
-        fader = new Fader(0, 255, 0.2f);
-        fader.start();
-    }
 
 
 }

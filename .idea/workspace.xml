@@ -2,9 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Added images directly to project">
+      <change afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/KImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dGameThing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2dGameThing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/Actor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/enemies/BasicEnemyAi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/enemies/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/enemies/EnemyAi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/AbilityMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/Knight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/Mage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/PlayerMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/PlayerOUTDATED.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/actors/players/Rogue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/obstacles/Boundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/obstacles/Collideable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/obstacles/Crate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/entities/obstacles/Obstacle.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/Sprites/Sprite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/Sprites/SpriteCircle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/Sprites/SpriteRectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/TwodGameThing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/TwodGameThing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/shapes/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/shapes/Line.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/shapes/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/shapes/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/PGif.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/PGif.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/TextureImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/TextureImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/testers/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/testers/Tester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/utility/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/utility/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/GunOutDated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/RangedWeapon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/RangedWeaponMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/SemiAutoGun.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/Sword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/Weapon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/projectiles/AbilityBullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/projectiles/Bullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/projectiles/BulletOUTDATED.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/projectiles/Grenade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/projectiles/Projectile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/projectiles/ProjectileMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/weapons/projectiles/ThrowingKnife.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,6 +132,19 @@
       <module name="2dGameThing" />
       <extension name="coverage">
         <pattern>
+          <option name="PATTERN" value="kchandra423.graphics.textures.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kchandra423.graphics.test" />
+      <module name="2dGameThing" />
+      <extension name="coverage">
+        <pattern>
           <option name="PATTERN" value="kchandra423.graphics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
@@ -95,9 +153,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TwodGameThing" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.Tester" />
       </list>
     </recent_temporary>
@@ -138,6 +208,9 @@
       <workItem from="1619301161220" duration="1347000" />
       <workItem from="1619324114623" duration="356000" />
       <workItem from="1619388042184" duration="11000" />
+      <workItem from="1619388086579" duration="972000" />
+      <workItem from="1619389306875" duration="3540000" />
+      <workItem from="1619392991439" duration="10224000" />
     </task>
     <task id="LOCAL-00001" summary="Through intelliJ :)">
       <created>1613684087506</created>
