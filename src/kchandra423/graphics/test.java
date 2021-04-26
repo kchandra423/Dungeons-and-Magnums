@@ -24,6 +24,5 @@ public class test {
             System.out.println();
 
         }
-//        System.out.println(new Color(0, 0, 0, 0).getRGB());
     }
 }

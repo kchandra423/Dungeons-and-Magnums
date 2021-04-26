@@ -63,9 +63,9 @@ class PGif extends Texture {
         PImage curImage = frames[curFrame].getImage();
 
         p.pushMatrix();
-
+        p.translate(x,y);
         p.rotate(angle);
-        p.image(curImage, x, y);
+        p.image(curImage, 0,0);
 
         p.popMatrix();
 

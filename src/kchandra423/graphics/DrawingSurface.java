@@ -1,5 +1,6 @@
 package kchandra423.graphics;
 
+import kchandra423.actors.players.Player;
 import kchandra423.graphics.textures.KImage;
 import kchandra423.graphics.textures.Texture;
 import processing.core.PApplet;
@@ -13,18 +14,16 @@ public class DrawingSurface extends PApplet {
 
     //    private PImage background;
     private static boolean[] keys;
-    //    private Player p;
-//    private Obstacle[] obstacles;
-//    private Room r;
-    private KImage p1 = new KImage(Texture.TextureBuilder.getTexture("res/Images/Players/MageIdle.gif"));
-    private KImage p2 = new KImage(Texture.TextureBuilder.getTexture("res/Images/Players/RogueIdle.gif"));
+    private Player p1;
+    private  Player p2;
+
     /**
      * Creates a new Drawing surface
      */
     public DrawingSurface() {
         keys = new boolean[128];
-
-
+        p1 = new Player(new KImage(Texture.TextureBuilder.getTexture("res/Images/Players/MageIdle.gif")), null);
+        p2 = new Player(new KImage(100,100,false,Texture.TextureBuilder.getTexture("res/Images/Players/RogueIdle.gif")), null);
     }
 
     // The statements in the setup() function
@@ -39,7 +38,7 @@ public class DrawingSurface extends PApplet {
     }
 
     public void setup() {
-        frameRate(1000);
+        frameRate(60);
 
     }
 
@@ -53,42 +52,43 @@ public class DrawingSurface extends PApplet {
      */
     public void draw() {
         background(255);
+        p1.act(this);
         p1.draw(this);
         p2.draw(this);
-        if(p1.intersects(p2)){
+        if(p1.getImage().intersects(p2.getImage())){
             System.out.println("urmom");
         }
 
     }
 
     public void keyPressed() {
-        if (key=='d'){
-            p1.translate(6,0);
-        }
-        else if (key== 'w'){
-            p1.translate(0,-6);
-        }
-        else if (key== 'a'){
-            p1.translate(-6,0);
-        }
-        else if (key== 's'){
-            p1.translate(0,6);
-        }
-        if (key=='l'){
-            p2.translate(6,0);
-        }
-        else if (key== 'i'){
-            p2.translate(0,-6);
-        }
-        else if (key== 'j'){
-            p2.translate(-6,0);
-        }
-        else if (key== 'k'){
-            p2.translate(0,6);
-        }
-//        if (keyCode < 128) {
-//            keys[keyCode] = true;
+//        if (key=='d'){
+//            p1.translate(6,0);
 //        }
+//        else if (key== 'w'){
+//            p1.translate(0,-6);
+//        }
+//        else if (key== 'a'){
+//            p1.translate(-6,0);
+//        }
+//        else if (key== 's'){
+//            p1.translate(0,6);
+//        }
+//        if (key=='l'){
+//            p2.translate(6,0);
+//        }
+//        else if (key== 'i'){
+//            p2.translate(0,-6);
+//        }
+//        else if (key== 'j'){
+//            p2.translate(-6,0);
+//        }
+//        else if (key== 'k'){
+//            p2.translate(0,6);
+//        }
+        if (keyCode < 128) {
+            keys[keyCode] = true;
+        }
 
 
     }

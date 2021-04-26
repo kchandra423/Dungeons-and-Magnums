@@ -47,8 +47,9 @@ class TextureImage extends Texture {
     @Override
     public void draw(PApplet p, int x, int y, float angle) {
         p.pushMatrix();
+        p.translate(x, y);
         p.rotate(angle);
-        p.image(image, x, y);
+        p.image(image,0,0);
         p.popMatrix();
     }
 
@@ -72,7 +73,6 @@ class TextureImage extends Texture {
     public int getHeight() {
         return image.height;
     }
-
 
 
 }
