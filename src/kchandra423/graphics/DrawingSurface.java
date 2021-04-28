@@ -15,15 +15,15 @@ public class DrawingSurface extends PApplet {
     //    private PImage background;
     private static boolean[] keys;
     private Player p1;
-    private  Player p2;
+    private Player p2;
 
     /**
      * Creates a new Drawing surface
      */
     public DrawingSurface() {
         keys = new boolean[128];
-        p1 = new Player(new KImage(Texture.TextureBuilder.getTexture("res/Images/Players/MageIdle.gif")), null);
-        p2 = new Player(new KImage(100,100,false,Texture.TextureBuilder.getTexture("res/Images/Players/RogueIdle.gif")), null);
+        p1 = new Player(new KImage(0, 0, false, false, Texture.TextureBuilder.getTexture("res/Images/Players/MageIdle.gif")), null);
+        p2 = new Player(new KImage(100, 100, false, false, Texture.TextureBuilder.getTexture("res/Images/Players/RogueIdle.gif")), null);
     }
 
     // The statements in the setup() function
@@ -34,12 +34,10 @@ public class DrawingSurface extends PApplet {
      */
     public void settings() {
         size(1500, 1000, P2D);
-
     }
 
     public void setup() {
         frameRate(60);
-
     }
 
     // The statements in draw() are executed until the
@@ -52,11 +50,23 @@ public class DrawingSurface extends PApplet {
      */
     public void draw() {
         background(255);
+        pushMatrix();
+        int halfx = width / 2;
+        int halfy = height / 2;
+//        translate(-p1.getImage().getX() +halfx +p1.getImage().getWidth()/2 , -p1.getImage().getY() +halfy-p1.getImage().getHeight()/2);
         p1.act(this);
         p1.draw(this);
         p2.draw(this);
-        if(p1.getImage().intersects(p2.getImage())){
-            System.out.println("urmom");
+        popMatrix();
+        line(width / 2, 0, width / 2, height);
+        line(0, height / 2, width, height / 2);
+        if (p1.getImage().intersects(p2.getImage())) {
+            fill(255, 0, 0);
+            text("colliding or something", 500, 500);
+        }
+        if(p1.weapon.intersects(p2.getImage())){
+            fill(0, 255, 0);
+            text("weaponds colliding or something", 500, 600);
         }
 
     }

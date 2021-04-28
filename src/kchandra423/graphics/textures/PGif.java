@@ -58,16 +58,12 @@ class PGif extends Texture {
         return answer;
     }
 
-    public void draw(PApplet p, int x, int y, float angle) {
+    public void draw(PApplet p, int x, int y) {
 
         PImage curImage = frames[curFrame].getImage();
 
-        p.pushMatrix();
-        p.translate(x,y);
-        p.rotate(angle);
-        p.image(curImage, 0,0);
+        p.image(curImage, x, y);
 
-        p.popMatrix();
 
         advanceFrame();
 

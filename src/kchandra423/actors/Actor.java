@@ -2,14 +2,18 @@ package kchandra423.actors;
 
 import kchandra423.graphics.DrawingSurface;
 import kchandra423.graphics.textures.KImage;
+import kchandra423.graphics.textures.Texture;
 
 public abstract class Actor {
     protected KImage image;
     protected float vx, vy;
     protected float maxV;
     protected float accel;
-    protected  Actor(KImage image, float maxV, float accel){
+    public final KImage weapon;
+
+    protected Actor(KImage image, float maxV, float accel) {
         this.image = image;
+        weapon = new KImage(image.getWidth()/2, image.getHeight()/2, false, true, Texture.TextureBuilder.getTexture("res/Images/Weapons/SMG.png"));
         this.maxV = maxV;
         this.accel = accel;
     }
@@ -30,6 +34,7 @@ public abstract class Actor {
 
     public void draw(DrawingSurface d) {
         image.draw(d);
+        weapon.draw(d);
     }
 
     public abstract void act(DrawingSurface d);
@@ -51,7 +56,7 @@ public abstract class Actor {
 
         vx *= 0.9f;
         image.translate(vx, 0);
-
+        weapon.translate(vx, 0);
     }
 
     protected void moveY(boolean[] directions) {
@@ -70,6 +75,6 @@ public abstract class Actor {
         vy *= 0.9f;
 
         image.translate(0, vy);
-
+        weapon.translate(0, vy);
     }
 }

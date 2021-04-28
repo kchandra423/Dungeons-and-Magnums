@@ -23,16 +23,16 @@ SOFTWARE.
  */
 package kchandra423.graphics.textures;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 class TextureImage extends Texture {
-    private PImage image;
+    private final PImage image;
 
     TextureImage(String pathName) {
         BufferedImage img = null;
@@ -45,12 +45,8 @@ class TextureImage extends Texture {
     }
 
     @Override
-    public void draw(PApplet p, int x, int y, float angle) {
-        p.pushMatrix();
-        p.translate(x, y);
-        p.rotate(angle);
-        p.image(image,0,0);
-        p.popMatrix();
+    public void draw(PApplet p, int x, int y) {
+        p.image(image, x, y);
     }
 
     @Override

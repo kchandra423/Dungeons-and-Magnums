@@ -8,30 +8,27 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Area;
 
 public class KImage {
-    private Texture image;
+    private final Texture image;
     private Area area;
     private float x;
     private float y;
     private float angle;
     private boolean reflected;
+    private boolean reversed;
 
     public KImage(Texture t) {
-        this(0, 0, false, t);
+        this(0, 0, false, false, t);
     }
 
-    public KImage(int x, int y, boolean reflected, Texture t) {
+    public KImage(int x, int y, boolean reflected, boolean reversed, Texture t) {
         this.x = x;
         this.reflected = reflected;
-
+        this.reversed = reversed;
         this.y = y;
         angle = 0;
         image = t;
         area = new Area();
         loadArea();
-        area = area.createTransformedArea(AffineTransform.getTranslateInstance(x,y));
-        if (reflected) {
-            area = area.createTransformedArea(AffineTransform.getScaleInstance(-1, 0));
-        }
     }
 
     private void loadArea() {
@@ -49,12 +46,24 @@ public class KImage {
 
     public void draw(PApplet p) {
         if (!reflected) {
-            image.draw(p, (int) x, (int) y, angle);
+//            image.draw(p, (int) x, (int) y, angle);
+            p.pushMatrix();
+            p.translate(x, y);
+            p.rotate(angle);
+            image.draw(p, 0, 0);
+            p.popMatrix();
         } else {
             p.pushMatrix();
-            p.scale(-1, 0);
-            p.translate(-x, y);
-            image.draw(p, (int) x, (int) y, (float) (Math.PI - angle));
+            p.scale(-1, 1);
+
+            if (reversed) {
+                p.translate(-x, y);
+                p.rotate((float) (Math.PI - angle));
+            } else {
+                p.translate(-(x + image.getWidth()), y);
+                p.rotate(angle);
+            }
+            image.draw(p, 0, 0);
             p.popMatrix();
         }
     }
@@ -62,23 +71,20 @@ public class KImage {
     public void translate(float delx, float dely) {
         x += delx;
         y += dely;
-        area = area.createTransformedArea(AffineTransform.getTranslateInstance(delx, dely));
     }
 
     public void rotate(float angle) {
         this.angle += angle;
-        area = area.createTransformedArea(AffineTransform.getRotateInstance(angle, x, y));
     }
 
     public void setReflected(boolean reflected) {
-//        if (reflected != this.reflected) {
-//            AffineTransform a = AffineTransform.getScaleInstance(-1, 0);
-//            a.translate(2 * x, 0);
-//            area = area.createTransformedArea(a);
-//        }
         this.reflected = reflected;
     }
 
+
+    public boolean isReflected() {
+        return reflected;
+    }
 
     public float getX() {
         return x;
@@ -92,11 +98,39 @@ public class KImage {
         return angle;
     }
 
-
-    public boolean intersects(KImage other) {
-        Area copy = (Area) area.clone();
-        copy.intersect(other.area);
-        return !copy.isEmpty();
+    public int getWidth() {
+        return image.getWidth();
     }
 
+    public int getHeight() {
+        return image.getHeight();
+    }
+
+    public boolean intersects(KImage other) {
+        Area overLap = getTransformedArea();
+        overLap.intersect(other.getTransformedArea());
+        return !overLap.isEmpty();
+    }
+
+    public Area getTransformedArea() {
+        if (!reflected) {
+            AffineTransform transform = new AffineTransform();
+            transform.translate(x, y);
+            transform.rotate(angle);
+            return area.createTransformedArea(transform);
+        } else {
+            AffineTransform transform = new AffineTransform();
+            transform.scale(-1, 1);
+
+            if (reversed) {
+                transform.translate(-x, y);
+                transform.rotate(Math.PI - angle);
+            } else {
+                transform.translate(-(x + image.getWidth()), y);
+                transform.rotate(angle);
+            }
+            return area.createTransformedArea(transform);
+        }
+    }
 }
+

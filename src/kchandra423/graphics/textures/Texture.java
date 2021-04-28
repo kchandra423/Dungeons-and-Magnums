@@ -61,7 +61,7 @@ public abstract class Texture {
      *
      * @param p The given PApplet to be drawn to
      */
-    public abstract void draw(PApplet p, int x, int y, float angle);
+    public abstract void draw(PApplet p, int x, int y);
 
     public abstract PImage getImage();
 

@@ -19,22 +19,19 @@ public class Player extends Actor {
 
     @Override
     public void act(DrawingSurface d) {
-        float angle = (float) Calculator.calculateAngle(image.getX(), image.getY(),
+        float angle = (float) Calculator.calculateAngle(d.width / 2, d.height / 2,
                 d.mouseX, d.mouseY);
         if (!Float.isNaN(angle)) {
-            image.rotate(angle- image.getAngle());
+            weapon.rotate(angle - weapon.getAngle());
         }
-//        System.err.println(angle);
-//        image.rotate(0.05f);
 
-//        if (angle > Math.PI / 2 && angle < 3 * Math.PI / 2) {
-//
-//            getSprite().setReflected(true);
-//            weapons.get(0).getSprite().setReflected(true);
-//        } else {
-//            getSprite().setReflected(false);
-//            weapons.get(0).getSprite().setReflected(false);
-//        }
+        if (angle > Math.PI / 2 && angle < 3 * Math.PI / 2) {
+            image.setReflected(true);
+            weapon.setReflected(true);
+        } else {
+            image.setReflected(false);
+            weapon.setReflected(false);
+        }
         boolean up = DrawingSurface.getKey(KeyEvent.VK_W);
         boolean left = DrawingSurface.getKey(KeyEvent.VK_A);
         boolean down = DrawingSurface.getKey(KeyEvent.VK_S);
