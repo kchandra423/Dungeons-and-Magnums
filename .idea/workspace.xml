@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Added images directly to project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/Actor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/players/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/TwodGameThing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/TwodGameThing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/Fader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/Fader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/KImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/KImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/PGif.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/PGif.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/Texture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/TextureImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/TextureImage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +90,7 @@
       <module name="2dGameThing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kchandra423.graphics.textures.*" />
+          <option name="PATTERN" value="kchandra423.graphics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,7 +161,7 @@
       <workItem from="1619463054993" duration="2144000" />
       <workItem from="1619475684026" duration="3162000" />
       <workItem from="1619482412924" duration="5119000" />
-      <workItem from="1619564449460" duration="5403000" />
+      <workItem from="1619564449460" duration="7337000" />
     </task>
     <task id="LOCAL-00001" summary="Through intelliJ :)">
       <created>1613684087506</created>

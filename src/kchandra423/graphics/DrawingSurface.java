@@ -16,6 +16,7 @@ public class DrawingSurface extends PApplet {
     private static boolean[] keys;
     private Player p1;
     private Player p2;
+    private int sum =0;
 
     /**
      * Creates a new Drawing surface
@@ -53,7 +54,7 @@ public class DrawingSurface extends PApplet {
         pushMatrix();
         int halfx = width / 2;
         int halfy = height / 2;
-//        translate(-p1.getImage().getX() +halfx +p1.getImage().getWidth()/2 , -p1.getImage().getY() +halfy-p1.getImage().getHeight()/2);
+        translate(-p1.getImage().getX() +halfx -p1.getImage().getWidth()/2 , -p1.getImage().getY() +halfy-p1.getImage().getHeight()/2);
         p1.act(this);
         p1.draw(this);
         p2.draw(this);
@@ -68,34 +69,17 @@ public class DrawingSurface extends PApplet {
             fill(0, 255, 0);
             text("weaponds colliding or something", 500, 600);
         }
+        fill(0);
+        if(frameCount%100000==0){
+            sum = 0;
+        }
+        sum +=frameRate;
+
+        text(sum/(frameCount- 100000* frameCount%100000)+" : fps", width-100, height-100);
 
     }
 
     public void keyPressed() {
-//        if (key=='d'){
-//            p1.translate(6,0);
-//        }
-//        else if (key== 'w'){
-//            p1.translate(0,-6);
-//        }
-//        else if (key== 'a'){
-//            p1.translate(-6,0);
-//        }
-//        else if (key== 's'){
-//            p1.translate(0,6);
-//        }
-//        if (key=='l'){
-//            p2.translate(6,0);
-//        }
-//        else if (key== 'i'){
-//            p2.translate(0,-6);
-//        }
-//        else if (key== 'j'){
-//            p2.translate(-6,0);
-//        }
-//        else if (key== 'k'){
-//            p2.translate(0,6);
-//        }
         if (keyCode < 128) {
             keys[keyCode] = true;
         }

@@ -9,7 +9,7 @@ import java.awt.geom.Area;
 
 public class KImage {
     private final Texture image;
-    private Area area;
+    private final Area area;
     private float x;
     private float y;
     private float angle;
@@ -46,7 +46,6 @@ public class KImage {
 
     public void draw(PApplet p) {
         if (!reflected) {
-//            image.draw(p, (int) x, (int) y, angle);
             p.pushMatrix();
             p.translate(x, y);
             p.rotate(angle);
@@ -106,6 +105,14 @@ public class KImage {
         return image.getHeight();
     }
 
+    public void setReversed(boolean reversed) {
+        this.reversed = reversed;
+    }
+
+    public boolean isReversed() {
+        return reversed;
+    }
+
     public boolean intersects(KImage other) {
         Area overLap = getTransformedArea();
         overLap.intersect(other.getTransformedArea());
@@ -121,7 +128,6 @@ public class KImage {
         } else {
             AffineTransform transform = new AffineTransform();
             transform.scale(-1, 1);
-
             if (reversed) {
                 transform.translate(-x, y);
                 transform.rotate(Math.PI - angle);
