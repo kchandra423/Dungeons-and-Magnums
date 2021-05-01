@@ -20,7 +20,7 @@ public class KImage {
         this(0, 0, false, false, t);
     }
 
-    public KImage(int x, int y, boolean reflected, boolean reversed, Texture t) {
+    public KImage(float x, float y, boolean reflected, boolean reversed, Texture t) {
         this.x = x;
         this.reflected = reflected;
         this.reversed = reversed;
@@ -85,6 +85,15 @@ public class KImage {
         return reflected;
     }
 
+    public void setAngle(float angle) {
+        this.angle = angle;
+    }
+
+    public void moveTo(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public float getX() {
         return x;
     }
@@ -119,7 +128,12 @@ public class KImage {
         return !overLap.isEmpty();
     }
 
-    public Area getTransformedArea() {
+
+    public Rectangle getBounds() {
+        return getTransformedArea().getBounds();
+    }
+
+    private Area getTransformedArea() {
         if (!reflected) {
             AffineTransform transform = new AffineTransform();
             transform.translate(x, y);

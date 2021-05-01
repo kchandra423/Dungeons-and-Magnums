@@ -1,5 +1,6 @@
 package kchandra423.graphics;
 
+import kchandra423.actors.Room;
 import kchandra423.actors.players.Player;
 import kchandra423.graphics.textures.KImage;
 import kchandra423.graphics.textures.Texture;
@@ -13,18 +14,17 @@ import processing.core.PApplet;
 public class DrawingSurface extends PApplet {
 
     //    private PImage background;
+//    private static int currentWidth, currentHeight;
     private static boolean[] keys;
-    private Player p1;
-    private Player p2;
-    private int sum = 0;
+    private Room room;
 
     /**
      * Creates a new Drawing surface
      */
     public DrawingSurface() {
         keys = new boolean[128];
-        p1 = new Player(new KImage(0, 0, false, false, Texture.TextureBuilder.getTexture("res/Images/Players/MageIdle.gif")), null);
-        p2 = new Player(new KImage(100, 100, false, false, Texture.TextureBuilder.getTexture("res/Images/Players/RogueIdle.gif")), null);
+        room = new Room();
+
     }
 
     // The statements in the setup() function
@@ -53,27 +53,30 @@ public class DrawingSurface extends PApplet {
      * draws everything in the drawing surface
      */
     public void draw() {
+//        DrawingSurface.currentWidth = width;
+//        DrawingSurface.currentHeight = height;
         background(255);
         pushMatrix();
         int halfx = width / 2;
         int halfy = height / 2;
-        translate(-p1.getImage().getX() + halfx - p1.getImage().getWidth() / 2, -p1.getImage().getY() + halfy - p1.getImage().getHeight() / 2);
-        p1.act(this);
-        p1.draw(this);
-        p2.draw(this);
+        translate(-room.getPlayer().getImage().getX() + halfx - room.getPlayer().getImage().getWidth() / 2.0f, -room.getPlayer().getImage().getY() + halfy - room.getPlayer().getImage().getHeight() / 2.0f);
+//        p1.act(this);
+//        p1.draw(this);
+//        p2.draw(this);
+//        if (p1.getImage().intersects(p2.getImage())) {
+//            fill(255, 0, 0);
+//            text("colliding or something", 500, 500);
+//        }
+//        if (p1.weapon.getImage().intersects(p2.getImage())) {
+//            fill(0, 255, 0);
+//            text("weaponds colliding or something", 500, 600);
+//        }
+        room.draw(this);
         popMatrix();
-        line(width / 2, 0, width / 2, height);
-        line(0, height / 2, width, height / 2);
-        if (p1.getImage().intersects(p2.getImage())) {
-            fill(255, 0, 0);
-            text("colliding or something", 500, 500);
-        }
-        if (p1.weapon.intersects(p2.getImage())) {
-            fill(0, 255, 0);
-            text("weaponds colliding or something", 500, 600);
-        }
+        line(width / 2.0f, 0, width / 2.0f, height);
+        line(0, height / 2.0f, width, height / 2.0f);
         fill(0);
-        text(((((int) frameRate + 5) / 10) * 10) + " : fps", width - 100, height - 100);
+        text((frameRate ) + " : fps", width - 100, height - 100);
 
     }
 
@@ -91,6 +94,7 @@ public class DrawingSurface extends PApplet {
             keys[keyCode] = false;
         }
 
+
     }
 
     public static boolean[] getKeys() {
@@ -102,7 +106,13 @@ public class DrawingSurface extends PApplet {
         return keys[keyCode];
 
     }
-
+//    public static int getCurrentWidth(){
+//        return currentWidth;
+//    }
+//
+//    public static int getCurrentHeight() {
+//        return currentHeight;
+//    }
 }
 
 

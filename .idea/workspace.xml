@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Added images directly to project">
+      <change afterPath="$PROJECT_DIR$/src/kchandra423/actors/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/kchandra423/actors/Gun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/kchandra423/actors/Projectile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/kchandra423/actors/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/kchandra423/levels/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/Actor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/players/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/players/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/players/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/textures/KImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/textures/KImage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +117,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TwodGameThing" />
@@ -160,6 +180,10 @@
       <workItem from="1619482412924" duration="5119000" />
       <workItem from="1619564449460" duration="10889000" />
       <workItem from="1619640749255" duration="2151000" />
+      <workItem from="1619744625661" duration="3984000" />
+      <workItem from="1619819039791" duration="11640000" />
+      <workItem from="1619835971677" duration="259000" />
+      <workItem from="1619849197170" duration="1622000" />
     </task>
     <task id="LOCAL-00001" summary="Through intelliJ :)">
       <created>1613684087506</created>
