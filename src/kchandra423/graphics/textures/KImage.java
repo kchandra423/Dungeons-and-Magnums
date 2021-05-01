@@ -114,6 +114,10 @@ public class KImage {
         return image.getHeight();
     }
 
+    public Texture getTexture() {
+        return image;
+    }
+
     public void setReversed(boolean reversed) {
         this.reversed = reversed;
     }

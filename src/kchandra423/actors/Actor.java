@@ -7,11 +7,9 @@ public abstract class Actor extends Entity {
     protected float vx, vy;
     protected float maxV;
     protected float accel;
-    public final Gun weapon;
 
     protected Actor(KImage image, float maxV, float accel) {
         super(image);
-        weapon = new Gun(image.getWidth() / 2.0f, image.getHeight() / 2.0f);
         this.maxV = maxV;
         this.accel = accel;
     }
@@ -22,20 +20,16 @@ public abstract class Actor extends Entity {
 
     public void bounceBackX() {
         image.translate(-vx, 0);
-        weapon.getImage().translate(-vx, 0);
         vx *= -0.3f;
     }
 
     public void bounceBackY() {
         image.translate(0, -vy);
-
-        weapon.getImage().translate(0, -vy);
         vy *= -0.3f;
     }
 
     public void draw(DrawingSurface d) {
         image.draw(d);
-        weapon.draw(d);
     }
 
     public abstract void act(DrawingSurface d, Room r);
@@ -57,7 +51,6 @@ public abstract class Actor extends Entity {
 
         vx *= 0.9f;
         image.translate(vx, 0);
-        weapon.getImage().translate(vx, 0);
     }
 
     protected void moveY(boolean[] directions) {
@@ -76,6 +69,5 @@ public abstract class Actor extends Entity {
         vy *= 0.9f;
 
         image.translate(0, vy);
-        weapon.getImage().translate(0, vy);
     }
 }

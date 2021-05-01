@@ -19,6 +19,8 @@ public class Room {
     public Room() {
         player = new Player(new KImage(0, 0, false, false, Texture.TextureBuilder.getTexture("res/Images/Players/MageIdle.gif")), null);
         background = Texture.TextureBuilder.getTexture("res/Images/Backgrounds/tiles.jpg");
+        enemies = new ArrayList<>();
+        enemies.add(new Enemy());
         bounds = new Rectangle(0, 0, 1000, 1000);
         background.resize(1000,1000);
     }
@@ -26,7 +28,10 @@ public class Room {
     public void draw(DrawingSurface d) {
         d.stroke(0);
         background.draw(d, bounds.x, bounds.y);
-
+        for (Enemy e :
+                enemies) {
+            e.draw(d);
+        }
         player.act(d, this);
         player.draw(d);
     }
