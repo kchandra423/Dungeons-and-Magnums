@@ -25,6 +25,7 @@ public class Room {
         background.resize(1000,1000);
     }
 
+
     public void draw(DrawingSurface d) {
         d.stroke(0);
         background.draw(d, bounds.x, bounds.y);
@@ -45,5 +46,9 @@ public class Room {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
     }
 }

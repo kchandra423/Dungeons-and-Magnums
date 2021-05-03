@@ -5,7 +5,7 @@ import kchandra423.graphics.textures.KImage;
 
 import java.awt.*;
 
-public class Projectile extends Entity {
+public class Projectile extends Actor {
     private boolean active;
     protected float v;
     protected float angle;

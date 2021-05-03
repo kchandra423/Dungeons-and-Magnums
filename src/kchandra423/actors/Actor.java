@@ -3,71 +3,43 @@ package kchandra423.actors;
 import kchandra423.graphics.DrawingSurface;
 import kchandra423.graphics.textures.KImage;
 
-public abstract class Actor extends Entity {
-    protected float vx, vy;
-    protected float maxV;
-    protected float accel;
+import java.awt.geom.Area;
+import java.util.ArrayList;
 
-    protected Actor(KImage image, float maxV, float accel) {
-        super(image);
-        this.maxV = maxV;
-        this.accel = accel;
+public abstract class Actor implements Collideable{
+
+    protected KImage image;
+    public Actor(KImage image){
+        this.image = image;
     }
-
-    public KImage getImage() {
-        return image;
-    }
-
-    public void bounceBackX() {
-        image.translate(-vx, 0);
-        vx *= -0.3f;
-    }
-
-    public void bounceBackY() {
-        image.translate(0, -vy);
-        vy *= -0.3f;
-    }
-
-    public void draw(DrawingSurface d) {
+    public abstract void act(DrawingSurface d, Room room);
+    public void draw(DrawingSurface d){
         image.draw(d);
     }
 
-    public abstract void act(DrawingSurface d, Room r);
-
-    protected void moveX(boolean[] directions) {
-        int left = directions[0] ? -1 : 0;
-        int right = directions[1] ? 1 : 0;
-        int netX = left + right;
-
-        float newVx = vx + netX * accel;
-
-        if (Math.abs(newVx) < maxV) {
-            vx = newVx;
-        } else if (newVx < 0) {
-            vx = -maxV;
-        } else {
-            vx = maxV;
-        }
-
-        vx *= 0.9f;
-        image.translate(vx, 0);
+    @Override
+    public Area getTransformedArea() {
+        return image.getTransformedArea();
     }
 
-    protected void moveY(boolean[] directions) {
+    @Override
+    public boolean intersects(Collideable other) {
+        Area overLap = getTransformedArea();
+        overLap.intersect(other.getTransformedArea());
+        return !overLap.isEmpty();
+    }
 
-        int up = directions[0] ? -1 : 0;
-        int down = directions[1] ? 1 : 0;
-        int netY = up + down;
-        float newVy = vy + netY * accel;
-        if (Math.abs(newVy) < maxV) {
-            vy = newVy;
-        } else if (newVy < 0) {
-            vy = -maxV;
-        } else {
-            vy = maxV;
+    @Override
+    public boolean intersects(ArrayList<Collideable> others) {
+        Area original = getTransformedArea();
+        for (Collideable other :
+                others) {
+            Area copy = (Area) original.clone();
+            copy.intersect(other.getTransformedArea());
+            if (!copy.isEmpty()) {
+                return true;
+            }
         }
-        vy *= 0.9f;
-
-        image.translate(0, vy);
+        return false;
     }
 }

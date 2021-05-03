@@ -1,12 +1,12 @@
 package kchandra423.actors.players;
 
-import kchandra423.actors.Actor;
+import kchandra423.actors.MovingActor;
 import kchandra423.actors.Room;
 import kchandra423.graphics.DrawingSurface;
 import kchandra423.graphics.textures.KImage;
 import kchandra423.graphics.textures.Texture;
 
-public class Enemy extends Actor
+public class Enemy extends MovingActor
 {
 
     public Enemy(){

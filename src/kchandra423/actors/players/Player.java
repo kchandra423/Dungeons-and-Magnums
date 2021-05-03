@@ -1,6 +1,7 @@
 package kchandra423.actors.players;
 
-import kchandra423.actors.Actor;
+import kchandra423.actors.Collideable;
+import kchandra423.actors.MovingActor;
 import kchandra423.actors.Gun;
 import kchandra423.actors.Room;
 import kchandra423.graphics.DrawingSurface;
@@ -10,7 +11,7 @@ import processing.core.PApplet;
 
 import java.awt.event.KeyEvent;
 
-public class Player extends Actor {
+public class Player extends MovingActor {
     private final KImage idle;
     private final KImage active;
     public final Gun weapon;
@@ -22,27 +23,7 @@ public class Player extends Actor {
         weapon = new Gun(image.getWidth() / 2.0f, image.getHeight() / 2.0f);
     }
 
-    @Override
-    public void bounceBackX() {
-        super.bounceBackX();
-        weapon.getImage().translate(-vx, 0);
-    }
 
-    @Override
-    public void bounceBackY() {
-        super.bounceBackY();
-        weapon.getImage().translate(0, -vy);
-    }
-    @Override
-    public void moveX(boolean[] directions){
-        super.moveX(directions);
-        weapon.getImage().translate(vx, 0);
-    }
-    @Override
-    public void moveY(boolean[] directions){
-        super.moveY(directions);
-        weapon.getImage().translate(0, vy);
-    }
     @Override
     public void draw(DrawingSurface d) {
         super.draw(d);
@@ -69,19 +50,20 @@ public class Player extends Actor {
             weapon.getImage().setReflected(false);
         }
 
-        weapon.act(d,r);
+        weapon.act(d, r);
         boolean up = DrawingSurface.getKey(KeyEvent.VK_W);
         boolean left = DrawingSurface.getKey(KeyEvent.VK_A);
         boolean down = DrawingSurface.getKey(KeyEvent.VK_S);
         boolean right = DrawingSurface.getKey(KeyEvent.VK_D);
         moveX(new boolean[]{left, right});
-        if (!r.inBounds(image)){
+        if (!r.inBounds(image)) {
             bounceBackX();
         }
         moveY(new boolean[]{up, down});
-        if (!r.inBounds(image)){
+        if (!r.inBounds(image)) {
             bounceBackY();
         }
+        weapon.getImage().moveTo(image.getX() + image.getWidth() / 2.0f, image.getY() + image.getHeight() / 2.0f);
     }
 
 

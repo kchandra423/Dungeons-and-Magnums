@@ -1,11 +1,13 @@
 package kchandra423.graphics.textures;
 
+import kchandra423.actors.Collideable;
 import processing.core.PApplet;
 import processing.core.PImage;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Area;
+import java.util.ArrayList;
 
 public class KImage {
     private final Texture image;
@@ -27,12 +29,22 @@ public class KImage {
         this.y = y;
         angle = 0;
         image = t;
-        area = new Area();
-        loadArea();
+        area = KImage.loadArea(image);
     }
 
-    private void loadArea() {
-        PImage img = image.getImage();
+    public KImage(float x, float y, boolean reflected, boolean reversed, Texture t, Area area) {
+        this.x = x;
+        this.reflected = reflected;
+        this.reversed = reversed;
+        this.y = y;
+        angle = 0;
+        image = t;
+        this.area = area;
+    }
+
+    public static Area loadArea(Texture texture) {
+        Area area = new Area();
+        PImage img = texture.getImage();
         for (int x = 0; x < img.width; x++) {
             for (int y = 0; y < img.height; y++) {
                 if (img.pixels[y * img.width + x] != 0) {
@@ -41,6 +53,7 @@ public class KImage {
             }
 
         }
+        return area;
 
     }
 
@@ -66,6 +79,7 @@ public class KImage {
             p.popMatrix();
         }
     }
+
 
     public void translate(float delx, float dely) {
         x += delx;
@@ -126,6 +140,19 @@ public class KImage {
         return reversed;
     }
 
+    public boolean intersects(ArrayList<KImage> images) {
+        Area orginial = getTransformedArea();
+        for (KImage kImage :
+                images) {
+            Area copy = (Area) orginial.clone();
+            copy.intersect(kImage.getTransformedArea());
+            if (!copy.isEmpty()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean intersects(KImage other) {
         Area overLap = getTransformedArea();
         overLap.intersect(other.getTransformedArea());
@@ -137,7 +164,7 @@ public class KImage {
         return getTransformedArea().getBounds();
     }
 
-    private Area getTransformedArea() {
+    public Area getTransformedArea() {
         if (!reflected) {
             AffineTransform transform = new AffineTransform();
             transform.translate(x, y);
