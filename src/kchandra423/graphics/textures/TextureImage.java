@@ -1,42 +1,17 @@
-/*
-MIT License
-
-Copyright (c) 2020 Kumar.s.Chandra
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
- */
 package kchandra423.graphics.textures;
-
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 
 import processing.core.PApplet;
 import processing.core.PImage;
 
-class TextureImage extends Texture {
-    private PImage image;
-    private Fader fader;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+class TextureImage implements Texture {
+    private final PImage image;
 
     TextureImage(String pathName) {
-        fader = null;
         BufferedImage img = null;
         try {
             img = ImageIO.read(new File(pathName));
@@ -47,13 +22,15 @@ class TextureImage extends Texture {
     }
 
     @Override
-    public void draw(PApplet p, float x, float y) {
-        p.image(image, (int) x, (int) y);
-        if (fader != null) {
-            fader.draw(p);
-        }
-
+    public void draw(PApplet p, int x, int y) {
+        p.image(image, x, y);
     }
+
+    @Override
+    public PImage getImage() {
+        return image;
+    }
+
 
     @Override
     public void resize(int w, int h) {
@@ -62,25 +39,13 @@ class TextureImage extends Texture {
     }
 
     @Override
-    public float getWidth() {
+    public int getWidth() {
         return image.width;
     }
 
     @Override
-    public float getHeight() {
+    public int getHeight() {
         return image.height;
-    }
-
-    @Override
-    public void fadeOut() {
-        fader = new Fader(255, 0, 0.2f);
-        fader.start();
-    }
-
-    @Override
-    public void fadeIn() {
-        fader = new Fader(0, 255, 0.2f);
-        fader.start();
     }
 
 

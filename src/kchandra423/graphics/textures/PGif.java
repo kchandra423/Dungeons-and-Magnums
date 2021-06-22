@@ -1,51 +1,23 @@
-/*
-MIT License
-
-Copyright (c) 2020 Kumar.s.Chandra
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
- */
 package kchandra423.graphics.textures;
-
-import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import destiny.gif.GifDecoder;
 import destiny.gif.GifDecoder.GifImage;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-class PGif extends Texture {
-    private Fader fader;
+import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+class PGif implements Texture {
     private Frame[] frames;
     private int curFrame;
     private long lastTime;
 
     PGif(String pathname) {
-        fader = null;
         try {
             frames = getFrames(pathname);
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -63,22 +35,26 @@ class PGif extends Texture {
         return answer;
     }
 
-    public void draw(PApplet p, float x, float y) {
+    public void draw(PApplet p, int x, int y) {
 
         PImage curImage = frames[curFrame].getImage();
 
-        p.image(curImage, (int)x, (int)y);
-        if (fader != null) {
-            fader.draw(p);
-        }
+        p.image(curImage, x, y);
+
+
         advanceFrame();
 
+    }
+
+    @Override
+    public PImage getImage() {
+        return frames[curFrame].getImage();
     }
 
     private void advanceFrame() {
         long curTime = System.currentTimeMillis();
         //.getDelay return time in 100ths of a second
-        if (curTime >= lastTime + frames[curFrame].getDelay() * 10) {
+        if (curTime >= lastTime + frames[curFrame].getDelay() * 10L) {
             lastTime = curTime;
             curFrame++;
             if (curFrame >= frames.length) {
@@ -89,34 +65,34 @@ class PGif extends Texture {
 
     @Override
     public void resize(int w, int h) {
-        for (int i = 0; i < frames.length; i++) {
-            frames[i].getImage().resize(w, h);
+        for (Frame frame : frames) {
+            frame.getImage().resize(w, h);
         }
     }
 
     @Override
-    public float getWidth() {
+    public int getWidth() {
         return frames[curFrame].getImage().width;
     }
 
     @Override
-    public float getHeight() {
+    public int getHeight() {
         return frames[curFrame].getImage().height;
     }
 
-    @Override
-    public void fadeOut() {
-        fader = new Fader(255, 0, 0.2f);
-        fader.start();
-    }
+    //    @Override
+//    public void fadeOut() {
+//        fader = new Fader(255, 0, 0.2f);
+//        fader.start();
+//    }
+//
+//    @Override
+//    public void fadeIn() {
+//        fader = new Fader(0, 255, 0.2f);
+//        fader.start();
+//    }
 
-    @Override
-    public void fadeIn() {
-        fader = new Fader(0, 255, 0.2f);
-        fader.start();
-    }
-
-    private class Frame {
+    private static class Frame {
         private final PImage image;
         private final int delay;
 
