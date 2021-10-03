@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Represents any sort of projectile that moves in a specified direction every frame
  *
  * @author Kumar Chandra
- * @see kchandra423.actors.Actor
+ * @see Actor
  */
 public class Projectile extends Actor {
     protected final boolean ally;

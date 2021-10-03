@@ -8,7 +8,7 @@ import kchandra423.graphics.textures.KImage;
 /**
  * Represents a generic obstacle that cannot be intersected by normal actors
  *
- * @see kchandra423.actors.Actor
+ * @see Actor
  * @author Kumar Chandra
  */
 public class Obstacle extends Actor {

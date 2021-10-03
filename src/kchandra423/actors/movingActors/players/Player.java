@@ -18,8 +18,8 @@ import java.awt.event.KeyEvent;
  *
  * @author Kumar Chandra
  * @see kchandra423.actors.Actor
- * @see kchandra423.actors.movingActors.MovingActor
- * @see kchandra423.actors.movingActors.enemies.Enemy
+ * @see MovingActor
+ * @see Enemy
  */
 public abstract class Player extends MovingActor {
     private final KImage idleImage;

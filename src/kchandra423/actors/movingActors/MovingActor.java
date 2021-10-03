@@ -20,7 +20,7 @@ import java.util.TimerTask;
  * It is recommended to move in the x direction, check for intersection (if it collides with anything, bounce back in the x direction), and then do the same thing in the y direction
  *
  * @author Kumar Chandra
- * @see kchandra423.actors.Actor
+ * @see Actor
  */
 public abstract class MovingActor extends Actor {
     private ActorState state;

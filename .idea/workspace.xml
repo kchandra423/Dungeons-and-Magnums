@@ -1,37 +1,287 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Dungeons-and-Magnums:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="Added images directly to project">
+    <list default="true" id="52a2965a-027c-4d5c-bcc4-cd1407cc5289" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Dungeons_and_Magnums_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dungeons-and-Magnums.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2dGameThing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2dGameThing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/graphics/DrawingSurface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DungeonsAndMagnums.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/capstone-project-66-smart.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README - Dungeons and Magnums - Ryan Lee, Kumar Chandra, Spencer Ye.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/UML.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/allclasses-noframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-15.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-16.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-17.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-18.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-19.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-20.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-21.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-22.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/Actor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/Damage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/MovingActor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/class-use/MovingActor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/ActorState.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/DamageTypes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/DefenseTypes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/Stat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/class-use/ActorState.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/class-use/DamageTypes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/class-use/DefenseTypes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/class-use/Stat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/constants/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/Bat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/Cyclops.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/Enemy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/Goblin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/Minotaur.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/RangedEnemy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/Witch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/class-use/Bat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/class-use/Cyclops.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/class-use/Enemy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/class-use/Goblin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/class-use/Minotaur.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/class-use/RangedEnemy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/class-use/Witch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/enemies/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/Knight.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/Mage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/Player.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/Rogue.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/class-use/Knight.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/class-use/Mage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/class-use/Player.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/class-use/Rogue.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/MovingActors/players/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/class-use/Actor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/class-use/Damage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/obstacles/Crate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/obstacles/Obstacle.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/obstacles/class-use/Crate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/obstacles/class-use/Obstacle.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/obstacles/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/obstacles/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/obstacles/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/obstacles/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/Weapon.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/class-use/Weapon.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/MagicStaff.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/SMG.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/Shotgun.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/class-use/MagicStaff.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/class-use/SMG.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/class-use/Shotgun.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/guns/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/meleeWeapons/BroadSword.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/meleeWeapons/class-use/BroadSword.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/meleeWeapons/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/meleeWeapons/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/meleeWeapons/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/meleeWeapons/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/projectiles/Projectile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/projectiles/class-use/Projectile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/projectiles/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/projectiles/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/projectiles/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/actors/weapons/projectiles/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/DrawingSurface.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/class-use/DrawingSurface.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/KImage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/Texture.TextureBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/Texture.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/class-use/KImage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/class-use/Texture.TextureBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/class-use/Texture.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/graphics/textures/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/levels/Room.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/levels/class-use/Room.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/levels/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/levels/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/levels/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/levels/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/AssetLoader.Sprite.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/AssetLoader.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/Calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/class-use/AssetLoader.Sprite.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/class-use/AssetLoader.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/class-use/Calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/kchandra423/utility/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/member-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/package-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/package-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/menu/DungeonsAndMagnums.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/menu/MainMenu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/menu/class-use/DungeonsAndMagnums.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/menu/class-use/MainMenu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/menu/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/menu/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/menu/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/menu/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/JavaSoundAudioDevice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/JayLayer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/Player.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/class-use/JavaSoundAudioDevice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/class-use/JayLayer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/class-use/Player.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/rlee348/sounds/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jquery-3.4.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script-dir/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/Level.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelEight.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelEleven.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelFive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelFour.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelNine.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelOne.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelSeven.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelSix.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelTen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelThree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelTwelve.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/LevelTwo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/Level.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelEight.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelEleven.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelFive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelFour.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelNine.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelOne.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelSeven.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelSix.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelTen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelThree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelTwelve.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/class-use/LevelTwo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/sye348/levels/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/javadocs/type-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/movingActors/MovingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/movingActors/MovingActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/movingActors/constants/DamageTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/movingActors/constants/DamageTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/movingActors/constants/DefenseTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/movingActors/constants/DefenseTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/movingActors/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/movingActors/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/obstacles/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/obstacles/Obstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kchandra423/actors/weapons/projectiles/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kchandra423/actors/weapons/projectiles/Projectile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videolink.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="1ofdQiTgEiOXNDVJbnjXVqQpugb" />
+  <component name="ProjectId" id="1yyqfALlSasJ1K7cv3NdFovZrI7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,55 +289,28 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.11904764" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs" />
-      <recent name="$PROJECT_DIR$/src/kchandra423/graphics/shapes" />
-      <recent name="$PROJECT_DIR$/src/kchandra423/graphics/textures" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs" />
-      <recent name="$PROJECT_DIR$/res/Images/Backgrounds" />
-      <recent name="$PROJECT_DIR$/res/Images/Projectiles" />
-      <recent name="$PROJECT_DIR$/src/kchandra423/graphics/Sprites" />
-      <recent name="$PROJECT_DIR$/src/kchandra423/graphics/Images/Sprites" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TwodGameThing">
-    <configuration name="Tester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kchandra423.testers.Tester" />
-      <module name="2dGameThing" />
+  <component name="RunManager">
+    <configuration name="DungeonsAndMagnums" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.DungeonsAndMagnums" />
+      <module name="Dungeons-and-Magnums" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kchandra423.testers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TwodGameThing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kchandra423.graphics.TwodGameThing" />
-      <module name="2dGameThing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="kchandra423.graphics.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,70 +320,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TwodGameThing" />
-        <item itemvalue="Application.Tester" />
+        <item itemvalue="Application.DungeonsAndMagnums" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="98c2f0b6-2d22-4474-a514-a0050736b9e0" name="Default Changelist" comment="" />
-      <created>1613681566473</created>
+      <changelist id="52a2965a-027c-4d5c-bcc4-cd1407cc5289" name="Changes" comment="" />
+      <created>1633234276170</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1613681566473</updated>
-      <workItem from="1613681568577" duration="19134000" />
-      <workItem from="1613766670478" duration="6000" />
-      <workItem from="1613771530045" duration="10852000" />
-      <workItem from="1613855541152" duration="2288000" />
-      <workItem from="1613857881807" duration="11255000" />
-      <workItem from="1613884687329" duration="2823000" />
-      <workItem from="1613891927169" duration="1368000" />
-      <workItem from="1613893424497" duration="3602000" />
-      <workItem from="1613927505730" duration="5445000" />
-      <workItem from="1613935818111" duration="729000" />
-      <workItem from="1613936877917" duration="3315000" />
-      <workItem from="1613949202897" duration="1962000" />
-      <workItem from="1613951613751" duration="949000" />
-      <workItem from="1613957828008" duration="298000" />
-      <workItem from="1614017118020" duration="1652000" />
-      <workItem from="1614062027742" duration="175000" />
-      <workItem from="1614114549856" duration="1287000" />
-      <workItem from="1614116184492" duration="468000" />
-      <workItem from="1614123466234" duration="637000" />
-      <workItem from="1614839540211" duration="775000" />
-      <workItem from="1618005534215" duration="462000" />
-      <workItem from="1618871450042" duration="176000" />
-      <workItem from="1619298034612" duration="452000" />
-      <workItem from="1619299821293" duration="389000" />
-      <workItem from="1619300729368" duration="8000" />
-      <workItem from="1619301161220" duration="1347000" />
-      <workItem from="1619324114623" duration="356000" />
-      <workItem from="1619388042184" duration="11000" />
+      <updated>1633234276170</updated>
+      <workItem from="1633234277756" duration="574000" />
     </task>
-    <task id="LOCAL-00001" summary="Through intelliJ :)">
-      <created>1613684087506</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1613684087506</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Through intelliJ (again):)">
-      <created>1613688728164</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1613688728164</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added images directly to project">
-      <created>1613721340768</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1613721340768</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,12 +349,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Through intelliJ :)" />
-    <MESSAGE value="Through intelliJ (again):)" />
-    <MESSAGE value="Added images directly to project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added images directly to project" />
   </component>
 </project>

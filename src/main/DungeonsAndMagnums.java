@@ -1,6 +1,6 @@
 package main;
 
-import javazoom.jl.decoder.JavaLayerException;
+
 import processing.core.PApplet;
 
 import kchandra423.graphics.screens.DrawingSurface;
